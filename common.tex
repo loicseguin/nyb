@@ -1,0 +1,64 @@
+\usepackage[french]{babel}
+\usepackage{fontspec}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage[separate-uncertainty]{siunitx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage[object=vectorian]{pgfornament}
+\usepackage{circuitikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage[version=3]{mhchem}
+
+\tikzset{>=latex,
+    negative/.style={draw=teal!70!black, fill=teal!10, thick},
+    positive/.style={draw=red, fill=red!10, thick}}
+\usetikzlibrary{matrix,calc,decorations.pathreplacing,decorations.pathmorphing,decorations.markings}
+\sisetup{locale=FR, per-mode=symbol}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\rhat}{\vec{\hat{r}}}
+\newcommand{\xhat}{\vec{\imath}}
+\newcommand{\yhat}{\vec{\jmath}}
+\newcommand{\zhat}{\vec{k}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\der}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\pder}[2]{\frac{\partial\ #1}{\partial\ #2}}
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\ddif}{\,\mathrm{d}}
+\newcommand{\grad}{\vec{\nabla}}
+\newcommand{\exemple}[1]{\begin{fullwidth}#1\end{fullwidth}}
+\newcommand{\norm}[1]{\lVert\ #1\ \rVert}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\va}{\vec{a}}
+\newcommand{\vF}{\vec{F}}
+\newcommand{\vE}{\vec{E}}
+\newcommand{\vB}{\vec{B}}
+\newcommand{\vecxyz}[3]{#1 \xhat\ + #2 \yhat\ + #3 \zhat}
+\newcommand{\vecxy}[2]{#1 \xhat\ + #2 \yhat}
+\newcommand{\coulombcst}{k}
+\newcommand{\emf}{\ensuremath{\mathcal{E}}}
+
+% Nice separator line
+\newcommand{\sectionline}{
+    \noindent
+    \begin{center}
+        \resizebox{0.5\linewidth}{1ex}
+    {{%
+    {\begin{tikzpicture}
+    \node  (C) at (0,0) {};
+    \node (D) at (9,0) {};
+    \path (C) to [ornament=85] (D);
+    \end{tikzpicture}}}}
+    \end{center}
+}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+
