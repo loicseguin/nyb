@@ -271,7 +271,7 @@ le module de la force électrique entre le ballon et le mur?
 
   $\mu_s F_e = mg$
 
-  $F_e = \frac{mg}{\mu_s} = 0.0474 N$
+  $F_e = \frac{mg}{\mu_s} = \SI{0.0474}{N}$
 
 
 \subsection*{Charge par induction}
@@ -280,7 +280,7 @@ le module de la force électrique entre le ballon et le mur?
   Nous avons parlé de charge par frottement. Il est également possible de
   charger un conducteur par induction.
   \begin{center}
-    \includegraphics[height=3cm]{figures/charge-induction-3.pdf}
+    \includegraphics[height=3cm]{01-force-electrique/figures/charge-induction-3.pdf}
   \end{center}
 
 
@@ -466,10 +466,6 @@ est $x = \SI{-22.25}{cm}$.
 
 
 \subsection*{Exercice}
-\marginpar{15 minutes}
-
-  \textit{Laisser les étudiants travailler sur ce problème avant de faire la
-    solution avec eux.}
 
   \textit{Cet exemple rappelle le principe de superposition.}
 
@@ -501,9 +497,64 @@ est $x = \SI{-22.25}{cm}$.
 
 \marginpar{25 minutes}
 
-  \includegraphics[scale=0.5]{figures/exercice-coulomb-soln.pdf}
+  \begin{center}
+  \begin{tikzpicture}[scale=1]
+    \draw[->] (-1, -1) -- ++(2, 0) node[below] {$x$};
+    \draw[->] (-1, -1) -- ++(0, 2) node[left] {$y$};
+    \node[circle, positive] at (0, 2) (q1) {$q_1$};
+    \node[circle, positive] at (0, 0) (q2) {$q_2$};
+    \node[circle, positive] at (5, 0) (q3) {$q_3$};
+    \node[circle, positive] at (5, 2) (q4) {$q_4$};
+    \draw[->] (q1) -- ($(q1) ! 0.2 ! (q4)$) node[above] {$\vec{u}_1$};
+    \draw[->] (q2) -- ($(q2) ! 0.2 ! (q4)$) node[above] {$\vec{u}_2$};
+    \draw[->] (q3) -- ($(q3) ! 0.5 ! (q4)$) node[right] {$\vec{u}_3$};
+    \draw[thick, ->] (q4) -- ($(q1) ! 1.4 ! (q4)$) node[above] {$\vec{F}_1$};
+    \draw[thick, ->] (q4) -- ($(q2) ! 1.4 ! (q4)$) node[above] {$\vec{F}_2$};
+    \draw[thick, ->] (q4) -- ($(q3) ! 1.8 ! (q4)$) node[right] {$\vec{F}_3$};
+    \draw[dashed] (q2) -- ++(1.5, 0);
+    \draw ($(q2) + (0.7, 0)$) arc (0:20:0.7);
+    \node at (0.9, 0.14) {$\theta$};
+  \end{tikzpicture}
+  \end{center}
 
-  \includegraphics[scale=0.5]{figures/exercice-coulomb-soln-num.pdf}
+  Par la loi de Coulomb
+
+  \begin{align*}
+    \vF_1 &= \frac{kq_1q_4}{d^2}\vu_1 & \vu_1 &= \xhat \\
+    \vF_2 &= \frac{kq_2q_4}{(l^2 + d^2)}\vu_2 & \vu_2 &= \cos\theta \xhat +
+             \sin\theta \yhat \\
+    & & &= \frac{d}{\sqrt{l^2 + d^2}} \xhat + \frac{l}{\sqrt{l^2 + d^2}} \yhat \\
+    \vF_3 &= \frac{kq_3q_4}{l^2}\vu_3 & \vu_3 &= \yhat \\
+  \end{align*}
+
+  Par le principe de superposition, la force nette sur $q_4$ est
+
+  \begin{align*}
+    \vF &= \vF_1 + \vF_2 + \vF_3 \\
+        &= \frac{kq_1q_4}{d^2}\xhat +
+           \frac{kq_2q_4}{(l^2 + d^2)} \left( \frac{d}{\sqrt{l^2 + d^2}} \xhat + \frac{l}{\sqrt{l^2 + d^2}} \yhat \right) +
+           \frac{kq_3q_4}{l^2}\yhat \\
+        &= kq_4\left[ \frac{q_1}{d^2} + \frac{q_2 d}{(l^2 + d^2)^{3/2}} \right] \xhat
+         + kq_4\left[ \frac{q_3}{l^2} + \frac{q_2 l}{(l^2 + d^2)^{3/2}} \right] \yhat
+  \end{align*}
+
+  Pour l'application numérique, il suffit de remplacer les valeurs numériques:
+
+  \begin{align*}
+    \vF &= (\SI{8.99e9}{Nm^2/C^2}) (\SI{78.6}{nC})
+          \left[ \frac{\SI{32.8}{nC}}{(\SI{2.13}{mm})^2} +
+            \frac{(\SI{1.34}{\micro\coulomb}) (\SI{2.13}{mm})}{((\SI{0.314}{mm})^2
+              + (\SI{2.13}{mm})^2)^{3/2}} \right] \xhat \\
+        &{} + (\SI{8.99e9}{Nm^2/C^2}) (\SI{78.6}{nC})
+          \left[ \frac{\SI{-234}{\nano C}}{(\SI{0.314}{mm})^2} +
+            \frac{(\SI{1.34}{\micro\coulomb}) (\SI{0.314}{mm})}{((\SI{0.314}{mm})^2
+              + (\SI{2.13}{mm})^2)^{3/2}} \right] \yhat
+  \end{align*}
+  Ce qui donne
+  \[
+    \boxed{\vF = \SI{207.2}{N}\xhat - \SI{1647}{N}\yhat}
+  \]
+
 
 
 \sectionline
@@ -554,8 +605,37 @@ est $x = \SI{-22.25}{cm}$.
   subie par Luc?
 
   \begin{center}
-    \includegraphics[scale=0.45]{figures/pousse-charge-soln.pdf}
+    \includegraphics[scale=0.45]{01-force-electrique/figures/pousse-charge-soln-dessin.pdf}
   \end{center}
+  
+  Par la deuxième loi de Newton, $\vF_1 = m_1 \va_1$. Sachant que
+  l'accélération en $y$ est nulle, on obtient
+
+  \begin{align}
+    \text{En } y \text{ : } & N_1 - m_1g = 0
+    &  \text{En } x \text{ : } & -F_{12} + f_c = m_1 a_{1x}  \nonumber \\
+    & N_1 = m_1 g
+    & & -F_{12} + \mu_c N_1 = m_1 a_{1x}  \nonumber \\
+    & & & -F_{12} + \mu_c m_1 g = m_1 a_{1x}
+    \label{eq:exsupp_coulomb1d_1}
+  \end{align}
+
+  Par la loi de Coulomb, la force électrique est
+  \begin{align*}
+    \vF_{12} &= \frac{kq_1q_2}{r^2} \vu_{2\rightarrow 1} \\
+             &= \frac{kq_1q_2}{r^2} (-\xhat)
+  \end{align*}
+  Dans \ref{eq:exsupp_coulomb1d_1}
+  \begin{align*}
+    -\frac{kq_1q_2}{r^2} + \mu_c m_1 g &= m_1 a_{1x}  \\
+    a_{1x} &= -\frac{kq_1q_2}{m_1r^2} + \mu_c g 
+  \end{align*}
+  Avec une valeur raisonnable du frottement entre les souliers de Luc et le sol
+  de $\mu_c = \num{0.6}$, on obtient
+  \[
+    \boxed{\va_1 = \SI{-10.86}{m/s^2}\xhat}
+  \]
+
 
 \subsection*{Loi de Coulomb 2D}
 
