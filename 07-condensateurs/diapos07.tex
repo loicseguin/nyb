@@ -1,0 +1,119 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\input{../common}
+\usepackage[version=3]{mhchem}
+
+\definecolor{UniBlue}{RGB}{83,121,170}
+\setbeamercolor{title}{fg=UniBlue}
+\setbeamercolor{frametitle}{fg=UniBlue}
+\setbeamercolor{structure}{fg=UniBlue}
+
+\begin{document}
+
+\begin{frame}{Deux grandes plaques parallèles}
+
+On considère deux grandes plaques parallèles connectées à une source de
+tension.  Si on applique une différence de potentiel $\Delta V$ entre les deux
+plaques, quelle charge sera emmagasinée sur chacune des plaques?
+
+\begin{center}
+  \includegraphics[scale=0.4]{../figures/condensateur-plan.pdf}
+\end{center}
+
+\begin{enumerate}
+  \item Décrire le champ électrique entre les deux plaques.
+  \item Déterminer le lien entre le champ électrique et la différence de
+    potentiel.
+  \item Montrer que la relation suivante est vraie
+    $$Q = \frac{\epsilon_0 A}{d} \Delta V.$$
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[t]{Propriétés du condensateur plan}
+
+Lesquels des énoncés suivants sont vrais.
+
+\begin{enumerate}
+  \item La charge accumulée sur un condensateur plan augmente
+    proportionnellement à la différence de potentiel entre les plaques.
+  \item Plus la distance entre les plaques est grande, plus la différence de
+    potentiel doit être élevée pour maintenir la même charge sur les plaques.
+  \item Si la densité surfacique de charge augmente et que la différence de
+    potentiel demeure la même, la distance entre les plaques doit diminuer.
+  \item Si on augmente la distance entre les plaques, l'énergie du système
+    diminue.
+  \item Si l'aire des plaques augmente, la capacité diminue.
+  \item Plus la différence de potentiel entre les plaques augmente, plus la
+    capacité diminue.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[t]{Énergie dans un condensateur}
+
+Considérons un condensateur avec une capacité $C$ dont les armatures sont
+maintenues à une différence de potentiel $\Delta V$.
+
+\begin{itemize}
+  \item Si la charge sur la plaque est $q$, calculer l'énergie nécessaire pour
+    amener une charge supplémentaire $dq$ sur la plaque.
+  \item Déterminer l'énergie totale requise pour charger le condensateur avec
+    une charge $Q$.
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Rigidité diélectrique}
+
+\begin{center}
+\begin{tabular}{lS}
+  \toprule
+  Substance       &        {Rigidité diélectrique (\si{V/cm})}     \\
+  \midrule
+  Air             &  30000  \\
+  Verre           &  100000 \\
+  Polystyrène     &  197000 \\
+  Papier ciré     &  500000 \\
+  Diamant         &  20000000 \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Exercice circuit avec condensateur}
+
+On construit le circuit suivant avec une pile de \SI{9}{V}. Le condensateur 1 a
+une capacité $C_1 = \SI{45}{\micro\farad}$ et ses armatures sont séparées par
+du vide. Les condensateurs 2 et 3 sont construits exactement de la même façon que le
+condensateur 1 sauf que tout l'espace entre leurs armatures est rempli par
+du germanium et du papier, respectivement. La constante diélectrique du
+germanium est 16 alors que celle du papier est 3.
+
+\begin{center}
+\begin{circuitikz}[scale=0.7]
+  \draw (0, 0) to[battery, l=$\SI{9}{\volt}$] (0, 3)
+    to[C, l=$C_1$] (2, 3)
+    to[C, l=$C_2$] (2, 0)
+    to (0, 0);
+  \draw (2, 3) to[short] (4, 3)
+    to[C, l=$C_3$] (4, 0)
+    to (2, 0);
+\end{circuitikz}
+\end{center}
+
+\begin{enumerate}
+  \item Déterminer la capacité équivalente à ces trois condensateurs.
+  \item Déterminer la charge accumulée sur la plaque positive du condensateur 2.
+  \item Déterminer l'énergie accumulée dans le condensateur 3.
+\end{enumerate}
+
+\end{frame}
+
+\end{document}
