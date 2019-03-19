@@ -257,8 +257,8 @@ de $q_1$ en faisant simplement
   \end{itemize}
 
   \begin{center}
-      \includegraphics[scale=0.3]{figures/lignes-champ-dipole.pdf}
-      \includegraphics[scale=0.3]{figures/lignes-champ-deux-plus.pdf}
+      \includegraphics[scale=0.3]{02-champ-electrique/figures/lignes-champ-dipole.pdf}
+      \includegraphics[scale=0.3]{02-champ-electrique/figures/lignes-champ-deux-plus.pdf}
   \end{center}
 
   Conséquences de ces règles :
@@ -661,4 +661,380 @@ est $2$ et le champ est
 \[
   E_y = \frac{2k\lambda}{D}
 \]
+
+
+\subsection*{Champ électrique d'une plaque infinie}
+
+\paragraph{Partie 1 --- Symétrie et orientation du champ}
+\marginpar{5 minutes}
+
+En utilisant la symétrie de la situation, déterminer la direction dans la
+laquelle le champ électrique doit être orienté au point $P$.
+
+\begin{center}
+  \includegraphics[scale=0.5]{02-champ-electrique/figures/champ-plaque-uniforme-1.pdf}
+\end{center}
+
+
+\textit{Solution. L'idée clé est que la composante horizontale du champ doit
+  être nulle puisque les composantes horizontales des éléments de chaque côté
+  du centre de la tige s'annulent deux à deux. La situation est illustrée
+  ci-dessus.}
+
+\paragraph{Partie 2 --- Champ produit par un élément de surface}
+
+À la lumière de la partie 1, trouver une expression pour la composante
+verticale du champ électrique produit par un élément de surface, i.e.: on
+cherche une expression pour $dE_z$.
+
+\begin{center}
+  \includegraphics[scale=0.5]{02-champ-electrique/figures/champ-plaque-uniforme-2.pdf}
+\end{center}
+
+L'idée clé est de voir le plan chargé comme un ensemble de fils infinis collés
+les uns aux autres. Chaque fil a une largeur $dx$ et produit un champ dont
+seule la composante verticale demeure (la composante horizontale étant annulée
+par un fil situé du côté opposé du plan).
+
+Pour trouver le champ électrique $dE_z$ produit, on fait l'approximation que
+l'élément de longueur est suffisamment petit pour qu'on puisse le considérer
+comme un fil. Le champ est donc
+
+$$d E_z = \frac{2k \lambda}{D} \cos\theta.$$
+
+La densité de charge linéique du fil est donnée par la densité de charge
+surfacique de la plaque multipliée par la largeur du fil
+
+$$\lambda = \sigma dx.$$
+
+La champ est donc
+
+$$d E_z = \frac{2k \sigma dx}{D} \cos\theta.$$
+
+
+
+\paragraph{Partie 3 --- Diminution du nombre de variables}
+
+L'expression obtenue précédemment contient trois variables : $x$, $D$ et
+$\theta$. Or, on peut construire le plan en collant des fils le long d'un seul
+axe donc il est possible de tout exprimer en terme d'une seule variable. Utiliser
+la trigonométrie pour éliminer deux des trois variables.
+
+
+On exprime tout en fonction de $\theta$. Il faut donc éliminer $x$ et $D$.
+
+\begin{align*}
+  \cos \theta &= \frac{d}{D} \\
+           D  &= \frac{d}{\cos\theta}
+\end{align*}
+
+\begin{align*}
+  \tan \theta &= \frac{x}{d} \\
+           x  &= d\tan\theta \\
+          dx  &= d\sec^2\theta d\theta
+\end{align*}
+
+Donc
+
+  $$d E_z = \frac{2k \sigma d\sec^2\theta d\theta}{d / \cos\theta} \cos\theta.$$
+
+qui se simplifie considérablement
+
+  $$d E_z = 2k \sigma d\theta.$$
+
+
+
+\paragraph{Partie 4 --- Application du principe de superposition}
+
+Nous avons déterminé la composante verticale du champ produit par un élément de
+surface. Reste à déterminer la composante verticale du champ électrique
+total au point $P$. Pour ce faire, nous n'avons qu'à intégrer l'expression que
+nous avons obtenue sur toute la largeur de la plaque. En faisant cela, nous
+appliquons le principe de superposition.
+
+\begin{align*}
+  E_z &= \int_{\theta_1}^{\theta_2} 2k \sigma d\theta \\
+      &= 2k \sigma \left[\theta\right]_{\theta_1}^{\theta_2} \\
+      &= 2k \sigma \left(\theta_2 - \theta_1 \right) \\
+\end{align*}
+
+Pour couvrir la plaque complètement, on doit prendre $\theta_1 = -\pi/2$ et
+$\theta_2 = \pi/2$.
+
+Donc
+\begin{align*}
+  E_z &= 2k \sigma \pi \\
+      &= \frac{2 \sigma \pi}{4\pi\varepsilon_0} \\
+      &= \frac{\sigma}{2\varepsilon_0}
+\end{align*}
+
+D'où
+$$\vec{E} = \frac{\sigma}{2\varepsilon_0} \zhat$$
+
+
+\paragraph{Partie 5 --- Vérification des cas extrêmes}
+
+C'est toujours une bonne idée de vérifier les cas extrêmes pour s'assurer que
+l'expression obtenue est cohérente dans ces cas. Qu'arrive-t-il si nous sommes
+très loin de la plaque? Qu'arrive-t-il si nous sommes très proche?
+
+Le résultat que nous avons obtenu est surprenant en ce sens qu'il ne dépend pas
+de la distance du plan. Évidemment, un plan infiniment grand n'existe pas. Par
+conséquent, le résultat n'est valable que pour un plan très grand duquel on est
+suffisamment proche.
+
+
+\subsection*{Champ électrique d'un arc de cercle chargé}
+
+On considère un arc de cercle de rayon $R$ qui couvre un angle $\alpha$ et
+porte une densité de charge linéique $\lambda$.  Quel est le champ électrique
+au centre du cercle?
+
+\begin{center}
+  \begin{tikzpicture}
+    \draw[decorate, decoration={
+      markings, mark=between positions 0.1 and 1 step 6mm with {
+        \node (0, 0) {$+$};
+    }}] (-40:2.5) arc (-40:40:2.5);
+    \draw (-40:2.7) arc (-40:40:2.7);
+    \draw (-40:2.3) arc (-40:40:2.3);
+    \draw[fill=black] (0, 0) circle (1pt);
+    \draw (0, 0) -- node[fill=white] {$R$} ++(40:2.3);
+    \draw (0, 0) -- ++(-40:2.3);
+    \draw (-40:0.3) arc (-40:40:0.3);
+    \draw[dashed, <-] (-1, 0) node[below] {$x$} -- (3, 0);
+    \draw[fill=black!20] (-30:2.3) -- (-30:2.7) arc (-30:-25:2.7) -- (-25:2.3) -- cycle;
+    \draw[dashed] (-27.5:2.3) -- (0, 0);
+    \draw[ultra thick, ->] (0, 0) -- (152.5:2) node[above] {$d\vec{E}$};
+    \draw (0:1) arc (0:-27.5:1);
+    \draw[->|] (-34:2.8) -- (-30:2.8);
+    \draw[->|] (-21:2.8) -- (-25:2.8);
+    \node at (-27:3.2) {$Rd\theta$};
+    \node at (-14:1.3) {$\theta$};
+    \node[fill=white] at (0:0.6) {$\alpha$};
+  \end{tikzpicture}
+\end{center}
+
+On prend un axe $x$ qui passe par le centre du cercle et le centre de l'arc.
+Par symétrie, le champ électrique au centre n'aura qu'une composante le long de
+l'axe $x$.
+
+Un élément de longueur qui couvre un angle $\dif \theta$ à un angle $\theta$ a
+une longueur $R\ddif \theta$ et porte une charge $\dif q = \lambda R \ddif
+\theta$. La composante $x$ du champ créé par cet élément de longueur est
+\[
+  \dif E_x =  \frac{k\lambda R \ddif \theta}{R^2} \cos \theta
+\]
+Le champ total s'obtient en intégrant l'expression ci-dessus entre
+$-\alpha / 2$ et $\alpha / 2$.
+\begin{align*}
+  E_x &= \int_{-\alpha / 2}^{\alpha / 2}
+          \frac{k\lambda R \cos \theta}{R^2} \ddif \theta \\
+      &=  \frac{k\lambda}{R} \int_{-\alpha / 2}^{\alpha / 2}
+          \cos \theta \ddif \theta \\
+      &= \frac{2k\lambda}{R} \sin(\alpha / 2)
+\end{align*}
+où la dernière ligne découle du fait que $\sin(\alpha / 2) = -\sin(-\alpha
+/ 2)$.  Le champ de l'arc est donc
+\[
+  \vec{E} = \frac{2k\lambda}{R} \sin(\alpha / 2) \xhat
+\]
+
+Dans le cas d'un cercle complet, $\alpha = 2\pi$ et le sinus donne zéro, ce qui
+fait que le champ total est nul, comme il se doit.
+
+
+%\subsection*{Le champ électrique d'un anneau chargé}
+
+%Considérons un anneau de rayon $R$ portant une densité linéique de charge
+%$\lambda$. À partir de l'exemple précédent, on peut conclure que le champ
+%électrique au centre de l'anneau est nul. Quel est le champ électrique à une
+%distance $d$ au-dessus du centre de l'anneau?
+
+%\begin{center}
+    %\includegraphics[scale=0.3]{02-champ-electrique/figures/ring.png}
+%\end{center}
+
+%Taking two identical line element on opposite sides of the ring show that the
+%net electric field will point in the $z$ direction.  A line element spanning an
+%angle $\dif \theta$ carries a charge $\lambda R \ddif \theta$.  The field in
+%the $z$ direction due to that line element is
+%\[
+  %dE_z = \coulombcst \frac{\lambda R \cos \alpha \ddif \theta}{R^2 + d^2}
+%\]
+%and the net field is the integral around the ring.  Since the integrand does
+%not depend on the position along the ring, the integral evaluates to just
+%$2\pi$ hence
+%\begin{align*}
+  %E_z = \coulombcst \frac{2 \pi \lambda R \cos \alpha}{R^2 + d^2}
+%\end{align*}
+%Notice that the numerator is the circumference of the ring multiplied with the
+%charge density.  This gives the total charge on the ring, $q$.  It is possible
+%to get rid of the angle $\alpha$ using simple trigonometry.  One finds that
+%\[
+  %\cos \alpha = \frac{d}{\sqrt{R^2 + d^2}}
+%\]
+%The net field can be written as
+%\[
+  %\vec{E} = \coulombcst \frac{q d}{(R^2 + d^2)^{3/2}} \zhat
+%\]
+
+
+%\subsection{Electric Field of a Charged Disc}
+
+%We now consider the electric field due to a disc of charge with surface charge
+%density $\sigma$ and radius $R$.  The question is then to determine the field
+%at a distance $d$ above the center of the disc (see Figure~\ref{fig:disc}).
+
+%\begin{figure}
+%\begin{center}
+    %\includegraphics[scale=0.3]{02-champ-electrique/figures/disc.png}
+%\end{center}
+%\caption{A charged disc}
+%\label{fig:disc}
+%\end{figure}
+
+%The disc can be considered as a collection of a large number of charged rings
+%whose radius vary between $0$ and $R$.  A ring of radius $r$ and width $dr$
+%carries a charge $dq = 2\pi r \sigma \,dr$.  The field it produces is then
+%given by the equation obtained at the end of the previous example:
+%\[
+  %dE_z = \coulombcst \frac{2\pi r \sigma d\,dr}{(r^2 + d^2)^{3/2}}
+%\]
+%and the total field is obtained by integrating this expression.
+%\begin{align*}
+  %E_z = \frac{\sigma d}{2\varepsilon_0} \int_0^R \frac{r\,dr}{(r^2 + d^2)^{3/2}}
+%\end{align*}
+%This integral can be evaluated by the simple substitution $u = r^2 + d^2$:
+%\begin{align*}
+  %E_z &= \frac{\sigma d}{4\varepsilon_0} \int_{d^2}^{R^2 + d^2}
+          %\frac{1}{2}\frac{du}{u^{3/2}} \\
+      %&= \frac{\sigma d}{4 \varepsilon_0} \left[ \frac{u^{-1/2}}{-1/2}
+          %\right]_{d^2}^{R^2 + d^2} \\
+      %&= \frac{\sigma d}{2 \varepsilon_0} \left( \frac{1}{d} -
+        %\frac{1}{\sqrt{R^2 + d^2}} \right) \\
+      %&= \frac{\sigma}{2\varepsilon_0} \left( 1 - \frac{1}{\sqrt{(R/d)^2 + 1}}
+        %\right)
+%\end{align*}
+%The electric field above the center of a disc is then
+%\[
+  %\vec{E} = \frac{\sigma}{2\varepsilon_0} \left( 1 - \frac{1}{\sqrt{(R/d)^2 + 1}}
+        %\right) \zhat
+%\]
+
+%An interesting limit case is when the radius of the disc is much larger than
+%the distance between the disc and the point at which the electric field is
+%calculated.  Then, $R/d$ goes to infinity and the second term in the
+%parenthesis goes to zero.  Hence the electric field at a distance $d$ from an
+%infinite plane of charge is
+%\[
+  %\vec{E} = \frac{\sigma}{2\varepsilon_0} \zhat
+%\]
+%The strength of the field does not depend of the distance from the plane.
+
+
+\sectionline
+
+
+\section{Équilibre électrostatique}
+
+\marginpar{Tremblay \S 2.9}
+
+\paragraph{Objectif}
+
+\begin{enumerate}
+  \item L'étudiant comprendra ce qui se passe avec les charges dans un
+    conducteur soumis à un champ électrique.
+  \item L'étudiant saura comment déterminer le champ électrique dans un
+    conducteur de même que dans une cavité à l'intérieur d'un conducteur.
+\end{enumerate}
+
+
+\subsection*{Le champ électrique à l'intérieur du conducteur est nul}
+
+Preuve: s'il ne l'était pas, le champ électrique à l'intérieur exercerait une
+force sur les électrons libres. Ils se déplaceraient dans la direction opposée
+au champ électrique. On aurait alors une charge $+$ solitaire et une charge $-$
+solitaire qui généreraient un champ électrique dans la direction opposée à
+celle du champ initial. Le processus continuerait tant et aussi longtemps que
+le champ électrique initial n'a pas été complètement neutralisé.
+
+
+
+\subsection*{Le champ électrique à la surface d'un conducteur est toujours
+  perpendiculaire à la surface}
+
+Preuve: si ce n'était pas le cas, on aurait un mouvement des électrons libres
+proches de la surface qui finirait par neutraliser la composante tangentielle
+du champ.
+
+
+
+\subsection*{Dans un conducteur chargé, toute la charge se retrouve à la surface
+  extérieure}
+
+Preuve: Le champ électrique à l'intérieur doit être nul. Si une charge nette
+macroscopique se trouvait à l'intérieur, à proximiter de cette charge, le champ
+électrique serait non-nul.
+
+
+
+\subsection*{Dans une cavité à l'intérieur d'un conducteur, le champ électrique est
+  nul}
+
+On crée une cavité dans le conducteur. Tout le matériel enlevé est
+neutre à cause du paragraphe précédent. Par conséquent, le matériel enlevé
+n'exerçait aucune force sur les charges situées à la surface du conducteur.
+Comme les charges à la surface étaient à l'équilibre avant d'enlever le
+matériel, enlever du matériel qui n'exerçait aucune force ne changera pas leur
+état d'équilibre.
+
+Le champ électrique où le matériel a été enlevé était nul avant de faire le
+trou. On a enlevé du matériel neutre qui ne contribuait donc pas au champ
+électrique. Les charges qui étaient à la surface n'ont pas bougé (argument du
+paragraphe précédent). Le champ électrique est déterminé complètement par la
+configuration des charges. Par conséquent, le champ électrique dans la cavité
+doit encore être nul.
+
+
+\subsection*{Exercice avec des sphères métalliques}
+
+Une charge $q = \si{4}{mC}$ dans une cavité au centre d'une sphère métallique.
+Quelle est la charge sur la surface intérieur et la surface extérieur de la
+sphère? Tracer les lignes de champ.
+
+
+\subsection*{Champ d'un conducteur sphérique (ou isolant uniformément chargé)}
+
+En réfléchissant aux lignes de champ, on peut voir que le champ à l'extérieur
+d'une sphère métallique chargée est le même que si toute la charge était
+concentré au centre.
+
+
+\section{Champ électrique dans les diélectriques}
+
+\marginpar{Tremblay \S 2.10}
+
+\subsection*{Constante diélectrique}
+
+\marginpar{5 minutes}
+
+Le champ électrique induit dans un diélectrique est en général proportionnel au
+champ électrique externe
+$$\vE_\text{diel} = \alpha \vE_\text{vide}$$
+donc le champ électrique total est
+$$\vE = \vE_\text{vide} + \vE_\text{diel} = (1 + \alpha) \vE_\text{vide}.$$
+On définit la \textbf{constante diélectrique} comme
+$$\kappa = \frac{1}{1 + \alpha}$$
+ie
+$$\vE = \frac{1}{\kappa} \vE_\text{vide}.$$
+
+
+\subsection*{Rigidité diélectrique}
+
+Si le champ électrique externe appliqué sur un diélectrique est trop élevé, les
+électrons seront arrachés aux atomes et un courant pourra traverser le
+diélectrique. C'est ce qu'on appelle une \textbf{décharge}. Chaque matériau est
+capable de supporter un champ électrique maximum qu'on appelle la
+\textbf{rigidité diélectrique}.
 
