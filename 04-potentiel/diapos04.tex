@@ -1,0 +1,134 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\input{../common}
+\usepackage[version=3]{mhchem}
+
+\definecolor{UniBlue}{RGB}{83,121,170}
+\setbeamercolor{title}{fg=UniBlue}
+\setbeamercolor{frametitle}{fg=UniBlue}
+\setbeamercolor{structure}{fg=UniBlue}
+
+\begin{document}
+
+\begin{frame}[t]{Travail effectué par la force électrique}
+
+Classez les situations suivantes en ordre croissant du travail fait par la
+force électrique sur la charge $q > 0$.
+
+\begin{center}
+  \includegraphics[scale=0.6]{figures/travail-force-electrique.pdf}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[t]{Est-ce que la force électrique est conservative?}
+
+Une particule de déplace de l'origine $\vec{r}_0 = \vecxyz{0}{0}{0}$ jusqu'au
+point $\vec{r} = \vecxyz{a}{b}{c}$ dans un champ électrique constant $\vec{E} =
+E_z \zhat$ où $E_z$ est constant.
+
+Déterminer le travail fait par la force électrique pour les deux trajectoires
+suivantes.
+
+\begin{itemize}
+  \item Le long de la ligne droite qui relie $\vec{r}_0$ à $\vec{r}$.
+  \item Le long de la ligne qui va de $\vec{r}_0$ à $\vecxyz{a}{b}{0}$, puis le
+    long de la ligne qui va de $\vecxyz{a}{b}{0}$ à $\vecxyz{a}{b}{c}$.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[t]{Exemple}
+
+On considère une mince tige métallique cylindrique très longue portant une
+charge uniforme.  La densité linéique de charge est de $\lambda =
+\SI{0.948}{\micro\coulomb\per\meter}$. Un électron est relâché \SI{35}{mm}
+de la tige.
+
+\begin{enumerate}
+  \item Calculer la variation d'énergie potentielle du système après que
+    l'électron se soit déplacé de \SI{1}{cm}.
+  \item Si l'électron était initialement au repos, déterminer sa vitesse à la
+    fin de son déplacement.
+  \item Tracer un graphique du module du champ électrique généré par la tige en
+    fonction de la distance par rapport à son axe.
+  \item Tracer un graphique de l'énergie potentielle de l'électron en fonction
+    de sa distance par rapport à l'axe de la tige.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Exemple}
+
+Deux grandes plaques métalliques sont maintenues à une différence de potentiel
+de \SI{12}{V}. Elles sont séparées d'une distance de \SI{1}{cm}. Un électron
+qui se trouve juste à côté d'une des plaques se déplace jusqu'à l'autre plaque.
+Si l'électron est initialement immobile, déterminer le module de sa vitesse
+lorsqu'il atteint l'autre plaque.
+
+\end{frame}
+
+
+
+\begin{frame}{Exemple}
+
+Deux grandes plaques métalliques sont maintenues à une différence de potentiel
+de \SI{12}{V}. On augmente la distance entre les plaques. Expliquez ce qui doit
+se produire avec la densité surfacique de charge sur les plaques pour que la
+différence de potentiel demeure constante.
+
+\end{frame}
+
+
+
+\begin{frame}{Exercice sur le potentiel et l'énergie potentielle}
+
+Quatre charges sont placées aux sommets d'un carré de côté $d = \SI{3}{cm}$. Les
+charges sont de $q_1 = \SI{1.7}{\micro\coulomb}$, $q_2 = \SI{-3}{\micro\coulomb}$,
+$q_3 = \SI{5}{\micro\coulomb}$ et $q_4 = \SI{-4}{\micro\coulomb}$.
+
+
+\begin{itemize}
+  \item Déterminer le potentiel à \SI{2}{cm} en-dessous de la charge $q_1$.
+  \item Déterminer l'énergie potentielle de cette distribution de charges.
+\end{itemize}
+
+\begin{center}
+  \begin{tikzpicture}
+    \coordinate (p1) at (0, 0);
+    \coordinate (p2) at (2, 0);
+    \coordinate (p3) at (2, 2);
+    \coordinate (p4) at (0, 2);
+    \node[draw, circle] (q1) at (p1) {$q_1$};
+    \node[draw, circle] (q2) at (p2) {$q_2$};
+    \node[draw, circle] (q3) at (p3) {$q_3$};
+    \node[draw, circle] (q4) at (p4) {$q_4$};
+    \draw[<->] (q1) -- node[fill=white] {$d$} (q2);
+    \draw[<->] (q2) -- node[fill=white] {$d$} (q3);
+    \draw[dashed] (q1) -- (q4);
+    \draw[dashed] (q3) -- (q4);
+  \end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Exercice équipotentielles}
+On place un électron dans une région de l'espace où les surfaces
+équipotentielles sont telles qu'illustrées dans le schéma ci-dessous.
+
+\begin{center}
+  \includegraphics[width=5cm]{figures/exercice-equipotentielles.pdf}
+\end{center}
+
+\begin{enumerate}
+  \item Dans quelle direction est la force que subit l'électron?
+  \item Tracez les lignes de champ électrique.
+\end{enumerate}
+\end{frame}
+
+
+\end{document}
