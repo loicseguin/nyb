@@ -13,11 +13,38 @@
 \usepackage{mathtools}
 \usepackage{longtable}
 \usepackage[version=3]{mhchem}
+\usepackage{marginnote}
+\usepackage[framemethod=tikz]{mdframed}
 
+
+% Paul Tol's qualitative palette
+% ``bright''.https://personal.sron.nl/~pault/#sec:qualitative
+\definecolor{tblue}{HTML}{4477AA}
+\definecolor{tcyan}{HTML}{66CCEE}
+\definecolor{tgreen}{HTML}{228833}
+\definecolor{tyellow}{HTML}{CCBB44}
+\definecolor{tred}{HTML}{EE6677}
+\definecolor{tpurple}{HTML}{AA3377}
+\definecolor{tgrey}{HTML}{BBBBBB}
+
+
+% Justification for marginnotes.
+\renewcommand*{\raggedleftmarginnote}{}
+\renewcommand*{\raggedrightmarginnote}{}
+
+
+% Styles for mdframed environments.
+\newmdenv[backgroundcolor=tgreen!10,linecolor=tgreen!30]{reponsebox}
+\newmdenv[backgroundcolor=tyellow!10,linecolor=tyellow!30]{diapobox}
+\newmdenv[backgroundcolor=tred!10,linecolor=tred!30]{fondamentalbox}
+
+% Default arrow for tikz and style for positive and negative objects.
 \tikzset{>=latex,
     negative/.style={draw=teal!70!black, fill=teal!10, thick},
     positive/.style={draw=red, fill=red!10, thick}}
-\usetikzlibrary{matrix,calc,decorations.pathreplacing,decorations.pathmorphing,decorations.markings,positioning}
+\usetikzlibrary{matrix,calc,decorations.pathreplacing,decorations.pathmorphing,decorations.markings}
+
+% French locale for numbers and negative exponent for units.
 \sisetup{locale=FR, per-mode=symbol}
 
 \newcommand{\abs}[1]{\left| #1 \right|}
@@ -44,6 +71,8 @@
 \newcommand{\vecxy}[2]{#1 \xhat\ + #2 \yhat}
 \newcommand{\coulombcst}{k}
 \newcommand{\emf}{\ensuremath{\mathcal{E}}}
+\newcommand{\eval}{\SI{1.602e-19}{C}}
+\newcommand{\kval}{\SI{8.99e9}{Nm^2 \per C^2}}
 
 % Nice separator line
 \newcommand{\sectionline}{
