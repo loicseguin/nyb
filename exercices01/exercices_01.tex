@@ -1,17 +1,19 @@
 \documentclass{tufte-handout}
 
 \usepackage{cmbright}
+\usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
 \usepackage{amsmath, amsthm, amsfonts}
 \usepackage[separate-uncertainty]{siunitx}
+\usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usepackage{circuitikz}
 \usepackage{hyperref}
 \usepackage{booktabs}
-%\usepackage[top=2cm, left=2cm, bottom=2cm, right=5cm]{geometry}
-
+\usepackage[version=3]{mhchem}
+\pgfplotsset{compat = 1.3}
 
 % Paul Tol's qualitative palette
 % ``bright''.https://personal.sron.nl/~pault/#sec:qualitative
@@ -61,13 +63,15 @@
 \newcommand{\kval}{\SI{8.99e9}{Nm^2 \per C^2}}
 
 
+
+
 % Pour cacher les réponses, utiliser la valeur 0
 %\def\reponse{0}
 % Pour afficher les réponses, utiliser la valeur 1
 \def\reponse{1}
 
 
-\title{Exercices sur les distributions continues de charges}
+\title{Charges et champs}
 \date{}
 \author{203-NYB-05 Électricité et magnétisme}
 
@@ -76,56 +80,48 @@
 
 \maketitle
 
-Imaginez que vous prenez une tige de plastique et que vous la chargez
-uniformément, c'est-à-dire que vous répartissez la charge également partout sur
-la tige. Votre, mission, si vous l'acceptez, sera de déterminer le champ
-électrique produit par cette tige à un point $P$ situé le long de son axe.
-\begin{marginfigure}
-  \begin{tikzpicture}
-    \draw (0, -0.1) rectangle (3.5, 0.1);
-    \coordinate (P) at (5, 0);
-    \node[below] (Pn) at (P) {$P$};
-    \fill (P) circle(2pt);
-    \foreach \x in {0.2, 0.7, ..., 3.3} {
-      \node at (\x, 0) {$-$};
-    }
-  \end{tikzpicture}
-\end{marginfigure}
 
-Pour l'instant, vous ne connaissez qu'une expression mathématique pour le champ
-produit par une charge ponctuelle. Ce serait bien si vous pouviez utiliser
-cette connaissance pour déterminer le champ produit par la tige. Le but de cet
-exercice est justement de développer une méthode qui vous permettra de calculer
-le champ électrique produit par des objets étendus à partir du champ d'une
-charge ponctuelle. Bien que cette méthode soit générale et s'applique à des
-objets de toutes formes, nous nous contenterons de l'utiliser dans des cas
-simples pour éviter les calculs trop monstrueux.
+\section{Fonctionnement d'un tube à rayons X}
+
+Un circuit à haute tension maintient une charge négative sur une plaque à
+proximité du filament et une charge positive sur l'anode. Pour une radiographie
+typique, on utilise un champ électrique de \SI{500}{\kilo\newton\per\coulomb}
+entre la cathode et l'anode. En supposant que la cathode et l'anode sont des
+grandes plaques uniformément chargées, déterminez la densité surfacique de
+charge sur chacune des deux plaques.
+
+Dans un tube à rayons X, on chauffe un filament en tungstène (semblable à ce
+qu'on peut retrouver dans une ampoule à incandescence) en le soumettant à un
+courant élevé. La chaleur permet à certains électrons d'être arrachés au
+filament lors d'un processus appelé \textbf{thermoionisation}. Le filament se
+trouve dans une section du tube qu'on appelle la cathode. Les électrons
+arrachés sont accélérés (grâce à un champ électrique dont nous parlerons plus
+loin) vers une partie du tube qu'on appelle l'anode. Dans une radiographie
+typique, on transfère une charge de \SI{40.0}{\milli\coulomb} de la cathode à
+l'anode.
+
+Combien d'électrons sont arrachés à la cathode?
+
+\if\reponse1
+  {\color{tblue}
+  }
+\else
+  \vspace{5cm}
+\fi
 
 
+Combien d'électrons en surplus l'anode possède-t-elle après le transfert?
 
-\section{Champ électrique sur l'axe d'une tige uniformément chargée}
+\if\reponse1
+  {\color{tblue}
+  }
+\else
+  \vspace{5cm}
+\fi
 
-Supposons que la tige a une longueur $L = \SI{10}{\centi\meter}$ et qu'elle
-porte une charge totale de $Q = \SI{-5}{\nano\coulomb}$ répartie uniformément
-sur toute sa longueur. On cherche le champ électrique à un point $P$ situé à
-$d = \SI{6}{\centi\meter}$ de l'extrémité droite de la tige.
+En réalité, les électrons excédentaires ne restent pas à l'anode, ils sont
+retournés à la cathode via un circuit à l'extérieur du tube.
 
-Une expérimentatrice talentueuse a réalisé l'expérience pour vous et a obtenu
-une valeur expérimentale du champ électrique. Le champ électrique qu'elle a
-mesuré a une grandeur de $E_\mathrm{exp} =
-\SI{4681 \pm 3}{\newton\per\coulomb}$ et il pointe vers la gauche.
-\begin{marginfigure}
-  \begin{tikzpicture}
-    \draw (0, -0.1) rectangle (3.5, 0.1);
-    \coordinate (P) at (5, 0);
-    \node[below] (Pn) at (P) {$P$};
-    \fill (P) circle(2pt);
-    \foreach \x in {0.2, 0.7, ..., 3.3} {
-      \node at (\x, 0) {$-$};
-    }
-    \draw[->, thick] (P) -- ++(-1, 0) node[below] {$\vE_\mathrm{exp}$};
-  \end{tikzpicture}
-\end{marginfigure}
 
 \subsection{Premier modèle : la tige comme une charge ponctuelle}
 
@@ -353,7 +349,7 @@ C'est un peu laborieux, mais un ordinateur est l'outil parfait pour faire ce
 genre de calculs répétitifs. Le tableau ci-contre montre les valeurs de champ
 obtenu pour différentes valeurs de $n$ jusqu'à $20$.
 
-\marginnote[-8\baselineskip]{
+\marginnote{
   \begin{center}
     \begin{tabular}{SS}
       \toprule

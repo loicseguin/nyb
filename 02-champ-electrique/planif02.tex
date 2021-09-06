@@ -1,11 +1,15 @@
 \chapter{Champ électrique}
 
-\section{Qu'est-ce que le champ électrique?}
+\section{La notion de champ}
 
-\marginpar{Tremblay \S 2.1}
+\marginnote{
+  Tremblay \S 2.1
+
+  Lafrance \S 2.1
+}
 
 
-\paragraph{Objectif}
+\minisec{Objectif}
 \begin{enumerate}
   \item L'étudiante comprendra ce qu'est un champ électrique.
   \item Elle pourra calculer le champ électrique produit par un ensemble de
@@ -13,7 +17,7 @@
 \end{enumerate}
 
 
-\marginpar{5 minutes}
+\marginnote{5 minutes}
   Le concept d'action à distance est troublant. La loi de Coulomb suggère que
   si deux charges interagissent et que l'une des deux se déplace, l'autre
   subira les effets instantanément. Or, cela voudrait dire qu'il est possible
@@ -28,8 +32,8 @@
   champ électrique.
 
 
-\subsection*{Analogie avec le champ gravitationnel}
-\marginpar{5 minutes}
+\minisec{Analogie avec le champ gravitationnel}
+\marginnote{5 minutes}
 
 Selon la loi de la gravitation universelle de Newton
 \[
@@ -49,28 +53,122 @@ avec
 Pour la force électrique, c'est le même principe. À partir de la loi de
 Coulomb
 \[
-  F_e = \frac{k\abs{q_1}\abs{q_2}}{r^2}
+  \vF_e = \frac{k q_1 q_2}{r^2} \vu_r
 \]
 on reconnait qu'une partie de l'expression ne dépend que de la source et de la
 distance à laquelle on se trouve de cette source
 \[
-  E = \frac{k\abs{q_1}}{r^2}.
+  \vE = \frac{k q_1}{r^2} \vu_r.
 \]
 On peut calculer la force sur une particule chargée située à une distance $r$
 de $q_1$ en faisant simplement
 \[
-  F_e = E\abs{q_2}.
+  \vF_e = \vE q_2.
 \]
 
+\begin{fondamentalbox}
+  \minisec{Définition du champ électrique}
 
+  Le champ électrique en un point de l'espace, est la force par unité de charge
+  que subirait une charge électrique située en ce point
+  \[
+    \vE \equiv \frac{\vF_e}{q}
+  \]
+\end{fondamentalbox}
+
+
+\begin{diapobox}
+  \minisec{Exercice}
+  On place une charge de \SI{8.00}{nC} à un endroit $P$. Elle subit une force
+  de \SI{24.0}{\micro N} vers la gauche.
+
+  \begin{itemize}
+    \item Quel est le champ électrique au point $P$?
+    \item Quel est le champ électrique au point $P$ si on enlève la charge de
+      \SI{8.00}{nC}?
+    \item Quelle serait la force sur une particule de charge \SI{-2}{mC} placée
+      au même endroit?
+  \end{itemize}
+\end{diapobox}
+
+
+\begin{diapobox}
+  \minisec{Électrophorèse sur gel}
+
+  \marginnote{
+    \includegraphics[width=4cm]{02-champ-electrique/figures/gel_electrophoresis.jpg}
+    \href{https://www.flickr.com/photos/34857812@N04/3235838168}{PlaxcoLab} (CC BY-2.0)
+  }
+  L'électrophorèse sur gel est une technique en biologie moléculaire pour
+  séparer des grosses molécules (le plus souvent ADN ou protéines) selon leur
+  poids moléculaire. L'ADN est naturellement chargée négativement ce qui fait
+  en sorte que si on la place dans un champ électrique, elle subira une force.
+  On peut utiliser cette force pour faire migrer les molécules dans un gel.
+  Plus la molécule est petite, plus elle pourra se déplacer facilement dans le
+  gel et elle ira plus vite qu'une plus grosse molécule.
+
+  \marginnote{
+    Kominami, H., Kobayashi, K. \& Yamada, H. Molecular-scale visualization and
+    surface charge density measurement of Z-DNA in aqueous solution. Sci Rep 9,
+    6851 (2019). \url{https://doi.org/10.1038/s41598-019-42394-5}
+
+    Boal David, Mechanics of the cell, 2nd edition, Cambridge University Press
+    2012, p.89 table 3.2
+  }
+  On place des fragments d'ADN dans un appareil d'électrophorèse sur gel et on
+  active un champ électrique de \SI{500}{\newton\per\coulomb}. La densité de
+  charge de l'ADN est environ \SI{-942}{\pico\coulomb\per\meter}. La densité de
+  masse est de \SI{3.155e-21}{\gram\per\meter}.
+
+  Quelle est la force électrique sur un fragment d'ADN de
+  \SI{10.0}{\micro\meter}?
+
+  En supposant que la force électrique est la seule force en jeu (cette
+  supposition est incorrecte), quelle serait l'accélération du fragment d'ADN?
+
+\end{diapobox}
+
+
+\begin{reponsebox}
+  La charge sur le brin d'ADN est
+  \begin{align*}
+    q &= \lambda L \\
+      &= \SI{-942}{\pico\coulomb\per\meter} \cdot \SI{10.0}{\micro\meter} \\
+      &= \SI{-9.420e-15}{\coulomb}
+  \end{align*}
+  Donc la force électrique sera
+  \begin{align*}
+    F_e &= \abs{q} E \\
+        &= \abs{\lambda} L E  \\
+        &= \SI{9.420e-15}{\coulomb} \cdot \SI{500}{\newton\per\coulomb} \\
+        &= \SI{4.71e-12}{\newton}
+  \end{align*}
+  vers l'électrode positive.
+
+  Pour trouver l'accélération, on utilise la deuxième loi de Newton
+  \begin{align*}
+    F_e &= ma  \\
+    a &= \frac{F_e}{m}  \\
+      &= \frac{\abs{\lambda}LE}{\lambda_m L} \\
+      &= \frac{\abs{\lambda}E}{\lambda_m} \\
+      &= \frac{\SI{942e-12}{\coulomb\per\meter} \cdot
+        \SI{500}{\newton\per\coulomb}}{\SI{3.155e-24}{\kilogram\per\meter}}  \\
+      &= \SI{1.493e17}{\meter\per\second\squared}
+  \end{align*}
+  L'accélération est vers l'électrode positive.
+\end{reponsebox}
 
 
 \section{Champ électrique d'une charge ponctuelle}
-\marginpar{Tremblay \S 2.2}
+\marginnote{
+  Tremblay \S 2.2
 
-\marginpar{5 minutes}
+  Lafrance \S 2.2
 
-  $$\vec{E} = \frac{kq}{r^2} \vec{u}_{r}$$
+  5 minutes
+}
+
+  $$\vec{E} = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2} \vec{u}_{r} = \frac{kq}{r^2} \vec{u}_{r}$$
 
   où $\vec{u}_r$ est un vecteur unitaire qui s'éloigne de la charge ponctuelle.
 
@@ -97,66 +195,31 @@ de $q_1$ en faisant simplement
 
 
 
-\subsection*{Exercice}
-\marginpar{5 minutes}
-\marginpar{Diapo}
-  Dans chacune des situations ci-dessous, utilisez les informations fournies
-  pour trouver la direction du champ électrique à la position de la charge de
-  droite.
+\begin{fondamentalbox}
+\minisec{Principe de superposition}
+\marginnote{5 minutes}
 
-  \begin{enumerate}
-    \item
-      \begin{tikzpicture}
-        \node[positive, circle] (q1) at (0, 0) {$+$};
-        \node[positive, circle] (q2) at (2, 0) {$+$};
-      \end{tikzpicture}
-    \item
-      \begin{tikzpicture}
-        \node[positive, circle] (q1) at (0, 0) {$+$};
-        \node[negative, circle] (q2) at (2, 0) {$-$};
-      \end{tikzpicture}
-    \item
-      \begin{tikzpicture}
-        \node[negative, circle] (q1) at (0, 0) {$-$};
-        \node[positive, circle] (q2) at (2, 0) {$+$};
-      \end{tikzpicture}
-    \item
-      \begin{tikzpicture}
-        \node[draw, circle] (q1) at (0, 0) {$q$};
-        \node[negative, circle] (q2) at (2, 0) {$-$};
-        \draw[very thick, ->] (q2) -- ++(1.5, 0) node[right] {$\vec{F}$};
-      \end{tikzpicture}
-    \item
-      \begin{tikzpicture}
-        \node[positive, circle] (q1) at (0, 0) {$+$};
-        \node[draw, circle] (q2) at (2, 0) {$q$};
-        \draw[very thick, ->] (q2) -- ++(-1.5, 0) node[below] {$\vec{F}$};
-      \end{tikzpicture}
-  \end{enumerate}
+Le champ électrique total en un point de l'espace est la somme des champs
+électrique causés par toutes les charges à proximité.
+\end{fondamentalbox}
 
-
-\subsection*{Principe de superposition}
-\marginpar{5 minutes}
-
-  Le champ électrique total en un point de l'espace est la somme des champs
-  électrique causés par toutes les charges à proximité.
-
-  On peut voir que c'est vrai à partir du principe de superposition pour les
-  forces électriques.
-  \begin{eqnarray*}
-    \vF = q\vec{E} &=& \vF_1 + \vF_2 + \cdots + \vF_n \\
-          &=& q \vec{E}_1 + q \vec{E}_2 + \cdots + q \vec{E}_n \\
-          &=& q \left( \vec{E}_1 + \vec{E}_2 + \cdots + \vec{E}_n \right)
-  \end{eqnarray*}
+On peut voir que c'est vrai à partir du principe de superposition pour les
+forces électriques.
+\begin{eqnarray*}
+  \vF = q\vec{E} &=& \vF_1 + \vF_2 + \cdots + \vF_n \\
+        &=& q \vec{E}_1 + q \vec{E}_2 + \cdots + q \vec{E}_n \\
+        &=& q \left( \vec{E}_1 + \vec{E}_2 + \cdots + \vec{E}_n \right)
+\end{eqnarray*}
 
 
 
-\subsection*{Exercice}
-\marginpar{25 minutes}
+\begin{diapobox}
+\minisec{Exercice}
+\marginnote{25 minutes}
   Une charge $q = \SI{30}{\micro\coulomb}$ est placée à \SI{160}{cm} du sol. À
   droite de cette charge, une charge $Q = \SI{-50}{\micro\coulomb}$ est placée
-  à \SI{2}{m} au-dessus du sol. La distance entre les deux charges est $D =
-  \SI{3}{m}$.
+  à \SI{2}{m} au-dessus du sol. La distance horizontale entre les deux charges
+  est $D = \SI{3}{m}$.
 
   Calculer le champ électrique au point $P$ situé à \SI{1}{m} à droite de la
   charge $q$ et à \SI{4}{m} au-dessus du sol.
@@ -164,10 +227,9 @@ de $q_1$ en faisant simplement
   \begin{center}
     \includegraphics[scale=0.25]{02-champ-electrique/figures/champ-deux-charges-1.pdf}
   \end{center}
+\end{diapobox}
 
-  \sectionline
-
-\paragraph{Solution}
+\begin{reponsebox}
   Les coordonnées du point $P$ sont $x = \SI{1}{m}$, $y = \SI{2.4}{m}$.
   \begin{center}
     \includegraphics[scale=0.5]{02-champ-electrique/figures/champ-deux-charges-soln.pdf}
@@ -203,23 +265,30 @@ de $q_1$ en faisant simplement
     \vE &= \vE_q + \vE_Q  \\
         &= \left(\num{55075}\xhat - \num{2903}\yhat\right) \si{N/C}
   \end{align*}
-
+\end{reponsebox}
 
 
 \section{Lignes de champ électrique}
-\marginpar{Tremblay \S 2.4}
+\marginnote{
+  Tremblay \S 2.4
 
-\paragraph{Objectif}
+  Lafrance \S 2.6
+}
+
+\minisec{Objectif}
 
 \begin{enumerate}
   \item L'étudiante connaîtra le lien entre les lignes de champ et le champ
     électrique.
-  \item L'étudiante pourra utiliser la notion de champ électrique pour calculer
-    la force sur une particule chargée.
+  \item L'étudiante saura interpréter un diagramme de lignes de champ.
 \end{enumerate}
 
-\paragraph{Démonstration}
-\marginpar{10 minutes}
+\minisec{Démonstration}
+\marginnote{
+  10 minutes
+
+  Cette démonstration fonctionne très mal à l'automne.
+}
 
   Matériel
   \begin{enumerate}
@@ -241,8 +310,8 @@ de $q_1$ en faisant simplement
   \end{enumerate}
 
 
-\subsection*{Caractéristiques des lignes de champ}
-\marginpar{10 minutes}
+\minisec{Caractéristiques des lignes de champ}
+\marginnote{10 minutes}
 
   Les lignes de champ électrique permettent de visualiser le champ électrique.
   Lorsqu'on les trace, on doit respecter les règles suivantes :
@@ -257,8 +326,8 @@ de $q_1$ en faisant simplement
   \end{itemize}
 
   \begin{center}
-      \includegraphics[scale=0.3]{02-champ-electrique/figures/lignes-champ-dipole.pdf}
-      \includegraphics[scale=0.3]{02-champ-electrique/figures/lignes-champ-deux-plus.pdf}
+      \includegraphics[scale=0.2]{02-champ-electrique/figures/lignes-champ-dipole.pdf}
+      \includegraphics[scale=0.2]{02-champ-electrique/figures/lignes-champ-deux-plus.pdf}
   \end{center}
 
   Conséquences de ces règles :
@@ -270,125 +339,74 @@ de $q_1$ en faisant simplement
   \end{itemize}
 
 
-\sectionline
+\begin{diapobox}
+  \minisec{Exercice lignes de champ}
 
+  \marginnote{
+    \url{https://www.st-andrews.ac.uk/~physapps/fande/Electric_Field_Lines.html}
 
-\section{Mouvement d'une particule chargée dans un champ uniforme}
-
-\marginpar{Tremblay \S 2.6}
-
-\marginpar{5 minutes}
-
-  Si le champ $\vec{E}$ est le même partout dans l'espace on dit qu'il est
-  \textbf{uniforme}. Dans un champ uniforme, une particule chargée subit
-  une accélération constante. En effet,
-
-  $$\vec{F} = q\vec{E} = m\vec{a}$$
-
-  par la deuxième loi de Newton. Donc
-
-  $$\vec{a} = \frac{q\vec{E}}{m}$$
-
-  est constante.
-
-
-\subsection*{Tube à rayons cathodiques}
-\marginpar{30 minutes}
-
-  Il y a quelques années, téléviseurs et écrans d'ordinateur fonctionnaient
-  avec des tubes à rayons cathodiques.
-
+    Voir aussi \url{http://www.falstad.com/emstatic/EMStatic.html}
+  }
   \begin{center}
-    \includegraphics[scale=0.2]{02-champ-electrique/figures/viewsonic-crt.png}
+  \includegraphics[scale=0.5]{02-champ-electrique/figures/efield-ex0.png}
   \end{center}
 
-  Le principe est simple: un élément chauffant produit un faisceau d'électrons
-  qui est accéléré dans un champ électrique. Les électrons sont ensuite déviés
-  par un autre champ électrique. Lorsqu'ils atteignent l'écran, ils transfèrent
-  leur énergie à des phosphores qui produisent de la lumière.
+  Quels sont les signes des deux charges?
 
-  \begin{center}
-  \begin{tikzpicture}[>=stealth, scale=0.8]
-    \draw plot[smooth cycle] coordinates {(0, 1) (2, 1.5) (6, 3) (6, -3) (2, -1.5) (0, -1)};
-    \draw[ultra thick] (0.8, 0.5) -- (2.5, 0.5);
-    \draw[ultra thick] (0.8, -0.5) -- (2.5, -0.5);
-    \foreach \x in {1.1, 1.5, 1.9, 2.3} {
-      \node at (\x, 0.7) {$+$};
-      \node at (\x, -0.7) {$-$};
-    }
-    \draw[thick, blue] plot[smooth] coordinates {(0, 0) (0.8, 0) (1.2, 0.02) (1.6, 0.04) (2, 0.08) (2.4, 0.16) (2.6, 0.2)} -- (6.4, 1.5);
-    \draw[|<->|] (7, 3) -- node[fill=white] {$D$} (7, -3);
-    \draw[|<->|] (0.8, -1.1) -- node[fill=white] {$l$} (2.5, -1.1);
-    \draw[<->|] (2.5, -1.1) -- node[fill=white] {$L$} (6.4, -1.1);
-  \end{tikzpicture}
-  \end{center}
+  Laquelle des deux charges est la plus grande en valeur absolue?
 
-  Les plaques métalliques génèrent un champ électrique uniforme $\vec{E}$.
-  Les dimensions du tube sont $l = \SI{2}{\centi\meter}$, $L =
-  \SI{40}{\centi\meter}$ et $D = \SI{60}{\centi\meter}$.  Avant de passer entre
-  les plaques du déflecteur, la vitesse des électrons est
-  5\% de la vitesse de la lumière vers la droite.
-
-  Déterminer la norme du champ électrique nécessaire pour que les électrons
-  atteignent le haut de l'écran.
+  Où le champ électrique est-il le plus grand?
+\end{diapobox}
 
 
-  Soit $v_x$ et $v_y$ les composantes horizontales et verticales de la vitesse
-  des électrons à leur entrée entre les deux plaques.
+%\begin{diapobox}
+%\minisec{Exercice}
+%\marginnote{5 minutes}
+  %Dans chacune des situations ci-dessous, utilisez les informations fournies
+  %pour trouver la direction du champ électrique à la position de la charge de
+  %droite.
 
-  Pas de force dans la direction $x$ donc $v_x$ est constante: $v_x = 0.05c$.
-
-  Le temps requis pour que les électrons traversent les plaques est
-  \[
-    t_l = \frac{l}{v_x}
-  \]
-
-  Pendant la traversée des plaques, les électrons sont soumis à une force
-  constante vers le haut dont la grandeur est
-  \[
-    F = eE
-  \]
-  où $E$ est la grandeur du champ électrique. Par la deuxième loi de Newton
-  \[
-    a_y = \frac{eE}{m}.
-  \]
-  La composante verticale de la vitesse à la sortie des plaques est donc
-  \[
-    v_{yl} = \frac{eE t_l}{m} = \frac{eEl}{mv_x}
-  \]
-  Le déplacement vertical pendant le passage entre les plaques est
-  \begin{eqnarray*}
-    y_l &=& \frac{1}{2} a_y t_l^2 \\
-    &=& \frac{1}{2} \frac{eE}{m} \frac{l^2}{v_x^2} \\
-    &=& \frac{eEl^2}{2mv_x^2}
-  \end{eqnarray*}
-  Pour la partie après les plaques, il n'y a pas de force, donc vitesse
-  constante.
-  \[
-    t_L = \frac{L}{v_x}
-  \]
-  et
-  \begin{eqnarray*}
-    y_L &=& v_{yl} t_L \\
-    &=& \frac{eEl}{mv_x}\frac{L}{v_x} \\
-    &=& \frac{eElL}{mv_x^2}.
-  \end{eqnarray*}
-  Pour atteindre le haut de l'écran, $y_L = D/2$ donc
-  \begin{eqnarray*}
-    \frac{D}{2} &=& \frac{eEl^2}{2mv_x^2} + \frac{eElL}{mv_x^2} \\
-     &=& \frac{eEl}{mv_x^2} \left(\frac{l}{2} + L\right) \\
-    E &=& \frac{Dmv_x^2}{2el (l/2 + L)} = \SI{46.7}{kN/C}
-  \end{eqnarray*}
-
-
-\sectionline
+  %\begin{enumerate}
+    %\item
+      %\begin{tikzpicture}
+        %\node[positive, circle] (q1) at (0, 0) {$+$};
+        %\node[positive, circle] (q2) at (2, 0) {$+$};
+      %\end{tikzpicture}
+    %\item
+      %\begin{tikzpicture}
+        %\node[positive, circle] (q1) at (0, 0) {$+$};
+        %\node[negative, circle] (q2) at (2, 0) {$-$};
+      %\end{tikzpicture}
+    %\item
+      %\begin{tikzpicture}
+        %\node[negative, circle] (q1) at (0, 0) {$-$};
+        %\node[positive, circle] (q2) at (2, 0) {$+$};
+      %\end{tikzpicture}
+    %\item
+      %\begin{tikzpicture}
+        %\node[draw, circle] (q1) at (0, 0) {$q$};
+        %\node[negative, circle] (q2) at (2, 0) {$-$};
+        %\draw[very thick, ->] (q2) -- ++(1.5, 0) node[right] {$\vec{F}$};
+      %\end{tikzpicture}
+    %\item
+      %\begin{tikzpicture}
+        %\node[positive, circle] (q1) at (0, 0) {$+$};
+        %\node[draw, circle] (q2) at (2, 0) {$q$};
+        %\draw[very thick, ->] (q2) -- ++(-1.5, 0) node[below] {$\vec{F}$};
+      %\end{tikzpicture}
+  %\end{enumerate}
+%\end{diapobox}
 
 
 \section{Distributions de charge}
 
-\marginpar{Tremblay \S 2.5}
+\marginnote{
+  Tremblay \S 2.5
 
-\paragraph{Objectif}
+  Lafrance \S 2.4
+}
+
+\minisec{Objectif}
 
 \begin{enumerate}
   \item L'étudiant pourra calculer le champ électrique produit par une
@@ -401,9 +419,10 @@ de $q_1$ en faisant simplement
 \end{enumerate}
 
 
-\subsection*{Exercice d'introduction aux distributions de charge}
+\begin{diapobox}
+\minisec{Exercice d'introduction aux distributions de charge}
 
-\marginpar{10 minutes}
+\marginnote{10 minutes}
 
 Chaque disque et l'anneau ont tous la même charge $Q$.
 Classer les objets en ordre croissant de la grandeur du champ électrique au
@@ -413,7 +432,7 @@ point $P$.
 \begin{tikzpicture}
   \matrix[row sep=1em, column sep=1em] {
   \node at (0, -2.5) {(a)};
-  \draw (0, 1.5) circle(1pt);
+  \fill (0, 1.5) circle(1pt);
   \node[left] at (0, 1.5) {$P$};
   \draw (0,-2) -- (0,0);
   \draw[fill=black!10] (0,0) ellipse[x radius=1, y radius=0.5];
@@ -421,14 +440,14 @@ point $P$.
   \draw (0,0) -- ++(-30:0.75);
   \node at (5:0.5) {$R$}; &
   \node at (0, -2.5) {(b)};
-  \draw (0, 1.5) circle(1pt);
+  \fill (0, 1.5) circle(1pt);
   \node[left] at (0, 1.5) {$P$};
   \draw (0,-2) -- (0,0);
   \draw[fill=black!10] (0,0) ellipse[x radius=2, y radius=1];
   \draw (0,0) -- (0,2);
   \draw (0,0) -- ++(-30:1.5);
   \node at (-05:0.8) {$2R$}; &
-  \draw (0, 1.5) circle(1pt);
+  \fill (0, 1.5) circle(1pt);
   \node[left] at (0, 1.5) {$P$};
   \node at (0, -2.5) {(c)};
   \draw (0,-2) -- (0,0);
@@ -442,406 +461,882 @@ point $P$.
   };
 \end{tikzpicture}
 \end{center}
+\end{diapobox}
 
 
-\subsection*{Calcul de champ le long de l'axe d'une tige chargée}
+\subsection{Calcul de champ le long de l'axe d'une tige chargée}
 
-\marginpar{20 minutes}
+\marginnote{20 minutes}
 
-Comment peut-on calculer le champ électrique produit par un objet chargé qui
-n'est pas ponctuel? La formule que nous avons vue ne s'applique pas.
-
-Nous allons d'abord considérer une tige chargée (ou un fil) de longueur $L$
-portant une charge totale $Q$ répartie uniformément dans la tige.
-
-Un fil n'est pas une particule ponctuelle, mais on peut le subdiviser en petits
-morceaux.
-
-Un segment de longueur $\Delta x$ porte une fraction de la charge totale.
-
-\paragraph{Question}: quelle fraction de la charge $Q$ est portée par un
-segment de longueur $\Delta x$?
-
-\begin{eqnarray*}
-\Delta q &=& Q \frac{\Delta x}{L} \\
-         &=& \frac{Q}{L} \Delta x
-\end{eqnarray*}
-
-On appelle le rapport $Q/L$ une  \textbf{densité linéique de charge}. On
-utilise souvent le symbole $\lambda$ pour représenter une densité linéique
-$$\lambda = \frac{Q}{L}$$
-dans le cas d'une tige chargée uniformément.
-
-Donc
-$$\Delta q = \lambda \Delta x.$$
-
-Si $\Delta x$ est suffisamment petit, on peut considérer ce morceau de fil
-comme une charge ponctuelle. Le champ électrique généré par ce bout de fil est
-donc
-\begin{eqnarray*}
-\Delta E_x &\approx& \frac{k \Delta q}{r^2} \\
-           &\approx& \frac{k \Delta q}{(L + d - x)^2}
-\end{eqnarray*}
-
-Pour déterminer le champ électrique total, il suffit d'additionner les
-contributions de toutes les parties du fil.
-
-\begin{eqnarray*}
-  E_x &\approx& \sum \frac{k \Delta q}{(L + d - x)^2}
-\end{eqnarray*}
-
-Tout ceci est approximatif parce que les parties de fil que nous avons
-considérées ne sont pas réellement ponctuelles. Si nous voulons obtenir un
-résultat exact, il faut que la longueur des segments de fils tende vers $0$.
-Alors, la somme devient une intégrale
-
-\begin{eqnarray*}
-  E_x &=& \lim_{\Delta q \rightarrow 0}\sum \frac{k \Delta q}{(L + d - x)^2} \\
-      &=& \int_{fil} \frac{k dq}{(L + d - x)^2} \\
-      &=& \int_0^L \frac{k\lambda dx}{(L + d - x)^2} \\
-      &=& \left[ \frac{k\lambda}{L + d - x} \right]_0^L \\
-      &=& k\lambda \left( \frac{1}{L + d - L} - \frac{1}{L + d} \right) \\
-      &=& k\lambda \left( \frac{1}{d} - \frac{1}{L + d} \right) \\
-      &=& \frac{k\lambda L}{d(L+d)}
-\end{eqnarray*}
-
-Deux cas limites intéressants:
-
-\begin{itemize}
-  \item si $d \gg L$, on trouve $kQ/d^2$
-  \item si $d \ll L$, on trouve $k\lambda / d$
-\end{itemize}
-
-
-\sectionline
-
-
-
-\subsection*{Exercice dirigé --- Champ électrique au-dessus d'une tige chargée}
-
-\paragraph{Partie 1 --- Symétrie et orientation du champ}
-\marginpar{5 minutes}
-
-En utilisant la symétrie de la situation, déterminer la direction dans la
-laquelle le champ électrique doit être orienté au point $P$.
-
-\begin{center}
-  \includegraphics[scale=0.5]{02-champ-electrique/figures/champ-fil-3.pdf}
-\end{center}
-
-
-\textit{Solution. L'idée clé est que la composante horizontale du champ doit
-  être nulle puisque les composantes horizontales des éléments de chaque côté
-  du centre de la tige s'annulent deux à deux. La situation est illustrée
-  ci-dessus.}
-
-\paragraph{Partie 2 --- Champ produit par un élément de longueur}
-
-À la lumière de la partie 1, trouver une expression pour la composante
-verticale du champ électrique produit par un élément de longueur, i.e.: on
-cherche une expression pour $dE_y$.
-
-\begin{center}
-  \begin{tikzpicture}
-    \draw (-4, 0) -- (4, 0);
-    \draw (-4, -0.1) -- (4, -0.1);
-    \coordinate (P) at (0, 3);
-    \coordinate (O) at (0, 0);
-    \coordinate (l) at (-2, 0);
-    \coordinate (r) at (2, 0);
-    \node[anchor=west] (Pn) at (P) {$P$};
+Imaginez que vous prenez une tige de plastique et que vous la chargez
+uniformément, c'est-à-dire que vous répartissez la charge également partout sur
+la tige. Votre, mission, si vous l'acceptez, sera de déterminer le champ
+électrique produit par cette tige à un point $P$ situé le long de son axe.
+\marginnote{
+  \begin{tikzpicture}[scale=0.8]
+    \draw (0, -0.1) rectangle (3.5, 0.1);
+    \coordinate (P) at (5, 0);
+    \node[below] (Pn) at (P) {$P$};
     \fill (P) circle(2pt);
-    \draw[<->] (O) -- node[fill=white] {$D$} ($(P) - (0, 0.08)$);
-    \fill ($(l) - (0.1, 0)$) rectangle ++(0.2, -0.1);
-    \fill ($(r) + (0.1, 0)$) rectangle ++(-0.2, -0.1);
-    \draw[dashed] (l) -- (P);
-    \draw[dashed] (r) -- node[right] {$r$} (P);
-    \draw[very thick,->] (P) -- ++({atan(3/2)}:1.5);
-    \draw[very thick,->] (P) -- ++({180-atan(3/2)}:1.5);
-    \draw ($(P) - (0, 0.5)$) arc (-90:{-atan(3/2}:0.5);
-    \node at ($(P) + (0.2, -0.7)$) {$\theta$};
-    \draw (0, -0.1) -- (0, -0.3) node[below] {$0$};
-    \draw (r) -- ++(0, -0.3) node[below] {$x$};
-    \draw[->] (-3.5, 1.5) -- (-2, 1.5) node[below] {$x$};
-    \draw[->] (-3.5, 1.5) -- (-3.5, 3) node[left] {$y$};
+    \foreach \x in {0.2, 0.7, ..., 3.3} {
+      \node at (\x, 0) {$-$};
+    }
   \end{tikzpicture}
-\end{center}
-
-  Un \textbf{élément de longueur} $d x$ produit un champ dont seule la
-  composante verticale demeure (la composante horizontale étant annulée par
-  celle d'un élément de longueur situé du côté opposé du fil.
-
-  Pour trouver le champ électrique $dE_y$ produit, on fait l'approximation que
-  l'élément de longueur est suffisamment petit pour qu'on puisse le considérer
-  comme une charge ponctuelle. Le champ est donc
-
-  $$d E_y = \frac{k d q}{r^2} \cos\theta.$$
-
-  La charge est $dq = \lambda dx$ où $\lambda = Q / L$. La distance peut
-  s'écrire
-
-  $$d E_y = \frac{k \lambda dx}{r^2} \cos\theta.$$
-
-
-
-\paragraph{Partie 3 --- Diminution du nombre de variables}
-
-L'expression obtenue précédemment contient trois variables : $x$, $r$ et
-$\theta$. Or, le fil est un objet à une dimension, il devrait donc être
-possible d'exprimer l'élément de champ en terme d'une seule variable. Utiliser
-la trigonométrie pour éliminer deux des trois variables.
-
-
-On exprime tout en fonction de $\theta$. Il faut donc éliminer $x$ et $r$.
-
-\begin{align*}
-  \cos \theta &= \frac{D}{r} \\
-           r  &= \frac{D}{\cos\theta}
-\end{align*}
-
-\begin{align*}
-  \tan \theta &= \frac{x}{D} \\
-           x  &= D\tan\theta \\
-          dx  &= D\sec^2\theta d\theta
-\end{align*}
-
-Donc
-
-  $$d E_y = \frac{k \lambda D\sec^2\theta d\theta}{D^2 / \cos^2\theta} \cos\theta.$$
-
-qui se simplifie considérablement
-
-  $$d E_y = \frac{k \lambda d\theta}{D} \cos\theta.$$
-
-
-
-\paragraph{Partie 4 --- Application du principe de superposition}
-
-Nous avons déterminé la composante verticale du champ produit par un élément de
-longueur $dx$. Reste à déterminer la composante verticale du champ électrique
-total au point $P$. Pour ce faire, nous n'avons qu'à intégrer l'expression que
-nous avons obtenue sur toute la longueur de la tige. En faisant cela, nous
-appliquons le principe de superposition.
-
-\begin{align*}
-  E_y &= \int_{\theta_1}^{\theta_2} \frac{k \lambda d\theta}{D} \cos\theta \\
-      &= \frac{k \lambda}{D} \left[\sin\theta\right]_{\theta_1}^{\theta_2} \\
-      &= \frac{k \lambda}{D} \left(\sin \theta_2 - \sin \theta_1 \right) \\
-\end{align*}
-
-Cette expression se simplifie en remarquant que
-\begin{align*}
-  \sin \theta_1 &= -\frac{L/2}{\sqrt{L^2/4 + D^2}} \\
-  \sin \theta_2 &= \frac{L/2}{\sqrt{L^2/4 + D^2}} \\
-\end{align*}
-
-Donc
-\[
-  E_y = \frac{k \lambda}{D}\frac{L}{\sqrt{L^2/4 + D^2}}
-\]
-
-D'où
-$$\vec{E} = \frac{k \lambda}{D}\frac{L}{\sqrt{L^2/4 + D^2}}\yhat$$
-
-
-\paragraph{Partie 5 --- Vérification des cas extrêmes}
-
-C'est toujours une bonne idée de vérifier les cas extrêmes pour s'assurer que
-l'expression obtenue est cohérente dans ces cas. Qu'arrive-t-il si nous sommes
-très loin de la tige ($D \gg L$)? Qu'arrive-t-il si nous sommes très proche
-($D \ll L$)?
-
-Loin:
-\[
-  E_y = \frac{k Q}{D^2}
-\]
-
-Proche: $\theta_1 = -\pi/2$ et $\theta_2 = \pi/2$ donc la différence des sinus
-est $2$ et le champ est
-\[
-  E_y = \frac{2k\lambda}{D}
-\]
-
-
-\subsection*{Champ électrique d'une plaque infinie}
-
-\paragraph{Partie 1 --- Symétrie et orientation du champ}
-\marginpar{5 minutes}
-
-En utilisant la symétrie de la situation, déterminer la direction dans la
-laquelle le champ électrique doit être orienté au point $P$.
-
-\begin{center}
-  \includegraphics[scale=0.5]{02-champ-electrique/figures/champ-plaque-uniforme-1.pdf}
-\end{center}
-
-
-\textit{Solution. L'idée clé est que la composante horizontale du champ doit
-  être nulle puisque les composantes horizontales des éléments de chaque côté
-  du centre de la tige s'annulent deux à deux. La situation est illustrée
-  ci-dessus.}
-
-\paragraph{Partie 2 --- Champ produit par un élément de surface}
-
-À la lumière de la partie 1, trouver une expression pour la composante
-verticale du champ électrique produit par un élément de surface, i.e.: on
-cherche une expression pour $dE_z$.
-
-\begin{center}
-  \includegraphics[scale=0.5]{02-champ-electrique/figures/champ-plaque-uniforme-2.pdf}
-\end{center}
-
-L'idée clé est de voir le plan chargé comme un ensemble de fils infinis collés
-les uns aux autres. Chaque fil a une largeur $dx$ et produit un champ dont
-seule la composante verticale demeure (la composante horizontale étant annulée
-par un fil situé du côté opposé du plan).
-
-Pour trouver le champ électrique $dE_z$ produit, on fait l'approximation que
-l'élément de longueur est suffisamment petit pour qu'on puisse le considérer
-comme un fil. Le champ est donc
-
-$$d E_z = \frac{2k \lambda}{D} \cos\theta.$$
-
-La densité de charge linéique du fil est donnée par la densité de charge
-surfacique de la plaque multipliée par la largeur du fil
-
-$$\lambda = \sigma dx.$$
-
-La champ est donc
-
-$$d E_z = \frac{2k \sigma dx}{D} \cos\theta.$$
-
-
-
-\paragraph{Partie 3 --- Diminution du nombre de variables}
-
-L'expression obtenue précédemment contient trois variables : $x$, $D$ et
-$\theta$. Or, on peut construire le plan en collant des fils le long d'un seul
-axe donc il est possible de tout exprimer en terme d'une seule variable. Utiliser
-la trigonométrie pour éliminer deux des trois variables.
-
-
-On exprime tout en fonction de $\theta$. Il faut donc éliminer $x$ et $D$.
-
-\begin{align*}
-  \cos \theta &= \frac{d}{D} \\
-           D  &= \frac{d}{\cos\theta}
-\end{align*}
-
-\begin{align*}
-  \tan \theta &= \frac{x}{d} \\
-           x  &= d\tan\theta \\
-          dx  &= d\sec^2\theta d\theta
-\end{align*}
-
-Donc
-
-  $$d E_z = \frac{2k \sigma d\sec^2\theta d\theta}{d / \cos\theta} \cos\theta.$$
-
-qui se simplifie considérablement
-
-  $$d E_z = 2k \sigma d\theta.$$
-
-
-
-\paragraph{Partie 4 --- Application du principe de superposition}
-
-Nous avons déterminé la composante verticale du champ produit par un élément de
-surface. Reste à déterminer la composante verticale du champ électrique
-total au point $P$. Pour ce faire, nous n'avons qu'à intégrer l'expression que
-nous avons obtenue sur toute la largeur de la plaque. En faisant cela, nous
-appliquons le principe de superposition.
-
-\begin{align*}
-  E_z &= \int_{\theta_1}^{\theta_2} 2k \sigma d\theta \\
-      &= 2k \sigma \left[\theta\right]_{\theta_1}^{\theta_2} \\
-      &= 2k \sigma \left(\theta_2 - \theta_1 \right) \\
-\end{align*}
-
-Pour couvrir la plaque complètement, on doit prendre $\theta_1 = -\pi/2$ et
-$\theta_2 = \pi/2$.
-
-Donc
-\begin{align*}
-  E_z &= 2k \sigma \pi \\
-      &= \frac{2 \sigma \pi}{4\pi\varepsilon_0} \\
-      &= \frac{\sigma}{2\varepsilon_0}
-\end{align*}
-
-D'où
-$$\vec{E} = \frac{\sigma}{2\varepsilon_0} \zhat$$
-
-
-\paragraph{Partie 5 --- Vérification des cas extrêmes}
-
-C'est toujours une bonne idée de vérifier les cas extrêmes pour s'assurer que
-l'expression obtenue est cohérente dans ces cas. Qu'arrive-t-il si nous sommes
-très loin de la plaque? Qu'arrive-t-il si nous sommes très proche?
-
-Le résultat que nous avons obtenu est surprenant en ce sens qu'il ne dépend pas
-de la distance du plan. Évidemment, un plan infiniment grand n'existe pas. Par
-conséquent, le résultat n'est valable que pour un plan très grand duquel on est
-suffisamment proche.
-
-
-\subsection*{Champ électrique d'un arc de cercle chargé}
-
-On considère un arc de cercle de rayon $R$ qui couvre un angle $\alpha$ et
-porte une densité de charge linéique $\lambda$.  Quel est le champ électrique
-au centre du cercle?
-
-\begin{center}
-  \begin{tikzpicture}
-    \draw[decorate, decoration={
-      markings, mark=between positions 0.1 and 1 step 6mm with {
-        \node (0, 0) {$+$};
-    }}] (-40:2.5) arc (-40:40:2.5);
-    \draw (-40:2.7) arc (-40:40:2.7);
-    \draw (-40:2.3) arc (-40:40:2.3);
-    \draw[fill=black] (0, 0) circle (1pt);
-    \draw (0, 0) -- node[fill=white] {$R$} ++(40:2.3);
-    \draw (0, 0) -- ++(-40:2.3);
-    \draw (-40:0.3) arc (-40:40:0.3);
-    \draw[dashed, <-] (-1, 0) node[below] {$x$} -- (3, 0);
-    \draw[fill=black!20] (-30:2.3) -- (-30:2.7) arc (-30:-25:2.7) -- (-25:2.3) -- cycle;
-    \draw[dashed] (-27.5:2.3) -- (0, 0);
-    \draw[ultra thick, ->] (0, 0) -- (152.5:2) node[above] {$d\vec{E}$};
-    \draw (0:1) arc (0:-27.5:1);
-    \draw[->|] (-34:2.8) -- (-30:2.8);
-    \draw[->|] (-21:2.8) -- (-25:2.8);
-    \node at (-27:3.2) {$Rd\theta$};
-    \node at (-14:1.3) {$\theta$};
-    \node[fill=white] at (0:0.6) {$\alpha$};
+}
+
+Pour l'instant, vous ne connaissez qu'une expression mathématique pour le champ
+produit par une charge ponctuelle. Ce serait bien si vous pouviez utiliser
+cette connaissance pour déterminer le champ produit par la tige. Le but de cet
+exercice est justement de développer une méthode qui vous permettra de calculer
+le champ électrique produit par des objets étendus à partir du champ d'une
+charge ponctuelle. Bien que cette méthode soit générale et s'applique à des
+objets de toutes formes, nous nous contenterons de l'utiliser dans des cas
+simples pour éviter les calculs trop monstrueux.
+
+
+Supposons que la tige a une longueur $L = \SI{10}{\centi\meter}$ et qu'elle
+porte une charge totale de $Q = \SI{-5}{\nano\coulomb}$ répartie uniformément
+sur toute sa longueur. On cherche le champ électrique à un point $P$ situé à
+$d = \SI{6}{\centi\meter}$ de l'extrémité droite de la tige.
+
+Une expérimentatrice talentueuse a réalisé l'expérience pour vous et a obtenu
+une valeur expérimentale du champ électrique. Le champ électrique qu'elle a
+mesuré a une grandeur de $E_\mathrm{exp} =
+\SI{4681 \pm 3}{\newton\per\coulomb}$ et il pointe vers la gauche.
+\marginnote{
+  \begin{tikzpicture}[scale=0.8]
+    \draw (0, -0.1) rectangle (3.5, 0.1);
+    \coordinate (P) at (5, 0);
+    \node[below] (Pn) at (P) {$P$};
+    \fill (P) circle(2pt);
+    \foreach \x in {0.2, 0.7, ..., 3.3} {
+      \node at (\x, 0) {$-$};
+    }
+    \draw[->, thick] (P) -- ++(-1, 0) node[below] {$\vE_\mathrm{exp}$};
   \end{tikzpicture}
-\end{center}
+}
 
-On prend un axe $x$ qui passe par le centre du cercle et le centre de l'arc.
-Par symétrie, le champ électrique au centre n'aura qu'une composante le long de
-l'axe $x$.
+\minisec{Premier modèle : la tige comme une charge ponctuelle}
 
-Un élément de longueur qui couvre un angle $\dif \theta$ à un angle $\theta$ a
-une longueur $R\ddif \theta$ et porte une charge $\dif q = \lambda R \ddif
-\theta$. La composante $x$ du champ créé par cet élément de longueur est
-\[
-  \dif E_x =  \frac{k\lambda R \ddif \theta}{R^2} \cos \theta
-\]
-Le champ total s'obtient en intégrant l'expression ci-dessus entre
-$-\alpha / 2$ et $\alpha / 2$.
+Vous vous dites que le modèle le plus simple est de considérer la tige comme
+une charge ponctuelle située en son centre. En utilisant ce modèle, calculez le
+champ électrique au point $P$.
+\marginnote{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[black!40] (0, -0.1) rectangle (3.5, 0.1);
+    \coordinate (P) at (5, 0);
+    \node[below] (Pn) at (P) {$P$};
+    \fill (P) circle(2pt);
+    \foreach \x in {0.2, 0.7, ..., 3.3} {
+      \node[black!40] at (\x, 0) {$-$};
+    }
+    \fill (1.75, 0) circle (2pt);
+    \node[below] at (1.75, 0) {$Q$};
+  \end{tikzpicture}
+}
+
+\begin{reponsebox}
+  La distance entre le centre de la tige et le point $P$ est $L/2 + d$. On
+  considère que toute la charge $Q$ de la tige est en son centre. Par
+  conséquent, le champ électrique est obtenu à partir de l'expression pour le
+  champ d'une charge ponctuelle
+  \begin{align*}
+    E &= \frac{k\abs{Q}}{\left(L/2 + d\right)^2}  \\
+      &= \SI{3715}{\newton\per\coulomb}
+  \end{align*}
+  Le champ pointe vers la tige, donc vers la gauche, parce que la charge de la
+  tige est négative.
+\end{reponsebox}
+
+
+Est-ce que le résultat que vous obtenez concorde avec le résultat expérimental?
+
+\begin{reponsebox}
+  L'ordre de grandeur est correct, mais avec un écart de plus de
+  \SI{20}{\percent}, ce n'est pas un résultat très exact.
+\end{reponsebox}
+
+
+
+\minisec{Deuxième modèle : la tige comme deux charges ponctuelles}
+
+Votre premier modèle ne vous satisfait pas. Vous croyez que vous pouvez faire
+mieux. Vous pensez à diviser la tige en deux \og sous-tiges \fg\ et à
+considérer chacune de ces sous-tiges comme une charge ponctuelle, chacune avec
+la moitié de la charge totale de la tige. Une des charge serait à la moitié de
+la première sous-tige, l'autre charge à la moitié de la deuxième sous-tige.
+\marginnote{
+  \begin{tikzpicture}[scale=0.8]
+    \draw[black!40] (0, -0.1) rectangle (1.75, 0.1);
+    \draw[black!40] (1.75, -0.1) rectangle (3.5, 0.1);
+    \coordinate (P) at (5, 0);
+    \node[below] (Pn) at (P) {$P$};
+    \fill (P) circle(2pt);
+    \foreach \x in {0.2, 0.7, ..., 3.3} {
+      \node[black!40] at (\x, 0) {$-$};
+    }
+    \fill (0.875, 0) circle (2pt);
+    \node[below] at (0.875, 0) {$Q/2$};
+    \fill (2.625, 0) circle (2pt);
+    \node[below] at (2.625, 0) {$Q/2$};
+  \end{tikzpicture}
+}
+En utilisant ce modèle, calculez le champ électrique au point $P$.
+
+
+\begin{reponsebox}
+  La charge de gauche est à une distance $3L/4 + d$ du point $P$. En utilisant
+  l'expression du champ pour une charge ponctuelle, on trouve
+  \begin{align*}
+    E_\mathrm{gauche} &= \frac{k\abs{Q/2}}{\left(3L/4 + d\right)^2}  \\
+      &= \SI{1233.2}{\newton\per\coulomb}
+  \end{align*}
+  La charge de droite est à une distance $L/4 + d$ du point $P$. En utilisant
+  l'expression du champ pour une charge ponctuelle, on trouve
+  \begin{align*}
+    E_\mathrm{droite} &= \frac{k\abs{Q/2}}{\left(L/4 + d\right)^2}  \\
+      &= \SI{3110.7}{\newton\per\coulomb}
+  \end{align*}
+  Puisque les deux champs pointent dans la même direction (vers la gauche), on
+  peut appliquer le principe de superposition directement
+  \begin{align*}
+    E &= E_\mathrm{gauche} + E_\mathrm{droite}  \\
+      &= \SI{4344}{\newton\per\coulomb}
+  \end{align*}
+\end{reponsebox}
+
+Est-ce que le résultat que vous obtenez concorde avec le résultat expérimental?
+
+\begin{reponsebox}
+  C'est beaucoup mieux! L'écart est encore important (environ
+  \SI{7}{\percent}), mais on sent qu'on progresse dans la bonne direction.
+\end{reponsebox}
+
+
+
+\minisec{Troisième modèle : la tige comme $n$ charges ponctuelles}
+
+Bien heureux de votre succès avec le deuxième modèle, vous décidez de
+poursuivre dans cette voie. Vous décidez de \og briser \fg\ la tige en $n$
+\og sous-tiges \fg\ chacune de largeur $L/n$ et portant chacune une charge
+$Q/n$.
+\marginnote{
+  \footnotesize
+  \begin{tikzpicture}[scale=0.8]
+    \foreach \i [evaluate=\i as \x using (0.7 * \i)] in {0, 1, ..., 4} {
+      \draw[black!40] (\x, -0.1) rectangle (\x + 0.7, 0.1);
+    }
+    \coordinate (P) at (5, 0);
+    \node[below] (Pn) at (P) {$P$};
+    \fill (P) circle(2pt);
+    %\foreach \i [evaluate=\i as \x using (2 * \i - 1) * 3.5 / (2 * 5)]
+      %in {1, 2, ..., 5} {
+      %\fill (\x, 0) circle (2pt);
+      %\draw (\x, -0.5) -- (\x, -0.7) node[below] {$x_\i$};
+    %}
+    \fill (0.35, 0) circle (2pt);
+    \draw (0.35, -0.5) -- (0.35, -0.7) node[below] {$x_1$};
+    \fill (1.05, 0) circle (2pt);
+    \draw (1.05, -0.5) -- (1.05, -0.7) node[below] {$x_2$};
+    \node at (1.75, 0) {$\ldots$};
+    \draw (1.75, -0.5) -- (1.75, -0.7) node[below] {$\ldots$};
+    \fill (2.45, 0) circle (2pt);
+    \draw (2.45, -0.5) -- (2.45, -0.7) node[below] {$x_{n - 1}$};
+    \fill (3.15, 0) circle (2pt);
+    \draw (3.15, -0.5) -- (3.15, -0.7) node[below] {$x_n$};
+    \draw[->] (-0.2, -0.5) -- (5.5, -0.5) node[below] {$x$};
+    \draw (0, -0.5) -- (0, -0.7) node[below] {$0$};
+    \draw (5, -0.5) -- (5, -0.7) node[below] {$x_p$};
+  \end{tikzpicture}
+}
+Pour vous aider dans vos calculs, vous définissez un système d'axe avec l'axe
+des $x$ qui pointe vers la droite. Vous placez l'origine à l'extrémité gauche
+de la tige. Pourquoi n'avez-vous pas vraiment besoin d'un axe $y$ ou $z$ dans
+cette situation?
+
+\begin{reponsebox}
+  Le champ généré par la tige au point $P$ pointe vers la gauche parce que le
+  point $P$ est aligné avec l'axe de la tige et que la tige est négative. Il
+  n'y a aucune composante du champ électrique dans une direction autre que
+  celle de l'axe $x$.
+\end{reponsebox}
+
+
+Quelle est la position du point $P$, $x_p$?
+
+\begin{reponsebox}
+  Le point $P$ est à une distance $d$ à droite de la fin de la tige de
+  longueur $L$. Puisque l'origine est à gauche de la tige, $x_p = L + d =
+  \SI{16}{\centi\meter}$.
+\end{reponsebox}
+
+Vous décidez d'appeler $x_1, x_2, \ldots, x_n$ les positions des différents
+morceaux de charge $Q/n$. Écrivez une expression qui vous permet de calculer la
+position du morceau de charge $i$, $x_i$.
+
+\begin{reponsebox}
+  \begin{align*}
+    x_{i} = (i - 1) \frac{L}{n} + \frac{1}{2}\frac{L}{n}
+  \end{align*}
+\end{reponsebox}
+
+
+Écrivez l'expression qui permet de calculer la composante $x$ du champ
+électrique produit par le morceau de charge $i$.
+
+\begin{reponsebox}
+  \begin{align*}
+    E_{ix} = \frac{k Q/n}{(L + d - x_i)^2}
+  \end{align*}
+\end{reponsebox}
+
+Appliquez le principe de superposition pour obtenir une expression pour la
+composante $x$ du champ électrique total.
+
+\begin{reponsebox}
+  \begin{align*}
+    E_{x} = \sum_i \frac{k Q/n}{(L + d - x_i)^2}
+  \end{align*}
+\end{reponsebox}
+
+\marginnote{
+  \begin{center}
+    \begin{tabular}{SS}
+      \toprule
+      $n$    &  {$E_x$ (\si{\newton\per\coulomb})}  \\
+      \midrule
+       1    &   -3714.9  \\
+       2    &   -4343.9  \\
+       3    &   -4516.8  \\
+       4    &   -4585.4  \\
+       5    &   -4619.1  \\
+       6    &   -4637.9  \\
+       7    &   -4649.4  \\
+       8    &   -4657.0  \\
+       9    &   -4662.3  \\
+      10    &   -4666.0  \\
+      11    &   -4668.8  \\
+      12    &   -4671.0  \\
+      13    &   -4672.6  \\
+      14    &   -4674.0  \\
+      15    &   -4675.0  \\
+      16    &   -4675.9  \\
+      17    &   -4676.6  \\
+      18    &   -4677.2  \\
+      19    &   -4677.8  \\
+      20    &   -4678.2  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+}[-18\baselineskip]
+
+En combinant cette expression avec celle qui donne les valeurs de $x_i$, vous
+pouvez calculer le champ électrique pour n'importe quel nombre de morceaux.
+C'est un peu laborieux, mais un ordinateur est l'outil parfait pour faire ce
+genre de calculs répétitifs. Le tableau ci-contre montre les valeurs de champ
+obtenu pour différentes valeurs de $n$ jusqu'à $20$.
+
+En regardant les valeurs dans ce tableau, que remarquez-vous qu'il se passe à
+mesure que les valeurs de $n$ augmente? Voyez-vous une tendance intéressante?
+
+\begin{reponsebox}
+  La composante $x$ du champ électrique semble se stabiliser à une valeur
+  proche de \SI{-4680}{\newton\per\coulomb}. Les mathématiciens diraient que
+  la suite semble \textbf{converger} vers cette valeur. Probablement que si
+  on continuait les calculs avec des valeurs de plus en plus grandes de $n$,
+  on arriverait à une valeur bien spécifique.
+
+    \begin{tikzpicture}
+      \begin{axis}[
+        xlabel={$n$},
+        ylabel={$E_x$ (\si{\newton\per\coulomb})},
+        /pgf/number format/.cd,
+                use comma,
+                1000 sep={}
+      ]
+        \addplot+[tblue, mark size=1pt] table {02-champ-electrique/champ_n.dat};
+      \end{axis}
+    \end{tikzpicture}
+\end{reponsebox}
+
+Est-ce que le champ électrique obtenu avec $20$ morceaux concorde avec celui
+obtenu expérimentalement?
+
+\begin{reponsebox}
+  Oui! Compte tenu de l'incertitude sur la valeur expérimentale, les deux
+  valeurs sont égales.
+\end{reponsebox}
+
+
+\minisec{Quatrième modèle : la tige comme une infinité de charges
+  ponctuelles}
+
+Vous remarquez que plus $n$ devient grand, plus les \og sous-tiges \fg\ sont
+petites et plus leur charge est petite. Vous vous retrouvez donc à additionner
+un très grand nombre de contributions qui sont chacune très petites. Un ami
+vous suggère d'utiliser la notation $dQ$ pour représenter la valeur de charge
+(le $Q / n$) lorsque le nombre de morceaux tend vers l'infini. Il vous suggère
+aussi de remplacer le symbole usuel de sommation $\sum$ par un S stylisé
+$\int$. Vous voyez, votre ami est un mathématicien, et ces gens sont réputés
+pour leur appréciation des notations compliquées. En utilisant cette nouvelle
+notation, récrivez l'expression pour la composante $x$ du champ électrique au
+point $P$ en supposant que le nombre de morceaux tend vers l'infini.
+
+\begin{reponsebox}
+  \begin{align*}
+    E_{x} = \int \frac{k dQ}{(L + d - x)^2}
+  \end{align*}
+
+  Dans cette expression, le $x$ est la position d'un des petits morceaux.
+\end{reponsebox}
+
+Dans cette expression, qu'on appelle une intégrale indéfinie, on ne spécifie
+pas quel est le domaine d'intégration, c'est-à-dire la région de l'espace sur
+laquelle on fait la somme. Évidemment, vous êtes en train d'additionner les
+contributions des différents morceaux de la tige, vous devez donc faire
+l'intégrale sur toute la tige.
+
+\begin{reponsebox}
+  \begin{align*}
+    E_{x} = \int_\mathrm{tige} \frac{k dQ}{(L + d - x)^2}
+  \end{align*}
+\end{reponsebox}
+
+On appelle une des petites sous-tiges un \textbf{élément} de tige. La
+longueur d'une des sous-tige est $dx$ et la tige est uniformément chargée,
+de telle sorte que la charge par unité de longueur est $\lambda$. Vous pouvez
+récrire l'élément de charge $dQ$ en fonction de l'élément de longueur $dx$ et
+de la densité linéique de charge $\lambda$.
+
+\begin{reponsebox}
+  \begin{align*}
+    dQ = \lambda dx
+  \end{align*}
+\end{reponsebox}
+
+En remplaçant dans l'expression du champ électrique et en prenant soin de bien
+indiquer les bornes d'intégration pour que la variable $x$ couvre toute la
+tige, vous obtenez une intégrale définie que vous êtes capables d'évaluer grâce
+à vos connaissances en calcul intégral. Faites le calcul et vérifiez si la
+valeur numérique obtenue concorde avec la valeur expérimentale.
+
+\begin{reponsebox}
+  \begin{align*}
+    E_{x} &= \int_\mathrm{tige} \frac{k \lambda dx}{(L + d - x)^2} \\
+          &= \int_0^L \frac{k \lambda dx}{(L + d - x)^2} \\
+          &= k \lambda \int_0^L \frac{dx}{(L + d - x)^2} \\
+          &= k \lambda \int_{L + d}^d \frac{-du}{u^2} &
+            \text{où } u = L + d - x \text{ donc } du = -dx  \\
+          &= k \lambda \left[ \frac{1}{u} \right]_{L + d}^d  \\
+          &= k \lambda \left( \frac{1}{d} - \frac{1}{L + d} \right)
+  \end{align*}
+  La densité de charge est $\lambda = Q/L = \SI{-5}{\nano\coulomb} /
+  \SI{10}{\centi\meter} = \SI{-5e-8}{\coulomb\per\meter}$. On trouve donc
+  \begin{align*}
+    E_x  &= \SI{8.99e9}{\newton\meter\squared\per\coulomb\squared}
+            \left( \SI{-5e8}{\coulomb} \right) \left(
+              \frac{1}{\SI{6}{\centi\meter}} - \frac{1}{\SI{10}{\centi\meter}
+                + \SI{6}{\centi\meter}} \right)  \\
+         &= \SI{-4682.3}{\newton\per\meter}
+  \end{align*}
+  Donc $\vE = \SI{-4682.3}{\newton\per\meter}\xhat$.
+\end{reponsebox}
+
+Si on est très loin du fil, alors le fil ressemble de plus en plus à un point.
+Vous vous attendez donc à ce que le champ du fil se rapproche de celui d'un
+point. Montrez que c'est le cas en utilisant l'expression symbolique que vous
+avez obtenue pour la composante $x$ du champ.
+
+\begin{reponsebox}
+  \begin{align*}
+    E_{x} &= k \lambda \left( \frac{1}{d} - \frac{1}{L + d} \right)  \\
+          &= k \lambda  \frac{L}{d(L + d)}
+  \end{align*}
+  Si on est très loin de la tige, alors $d \gg L$ et $L + d \approx d$ d'où
+  \begin{align*}
+    E_{x} &= k \lambda \left( \frac{1}{d} - \frac{1}{L + d} \right)  \\
+          &= k \lambda  \frac{L}{d^2}  \\
+          &= \frac{kQ}{d^2}
+  \end{align*}
+\end{reponsebox}
+
+
+
+
+\subsection{Méthode générale pour calculer le champ produit par une
+  distribution de charge}
+
+\marginnote{
+  \begin{center}
+    \includegraphics[scale=0.3]{02-champ-electrique/figures/field_volume.png}
+  \end{center}
+}
+
+De façon générale, si on a un objet chargé, on peut diviser cet objet en
+éléments de charge $dq$ qui sont suffisamment petits pour être considérés comme
+des charges ponctuelles. On peut donc utiliser le champ produit par une charge
+ponctuelle et le principe de superposition pour calculer le champ produit à un
+point donné
+
 \begin{align*}
-  E_x &= \int_{-\alpha / 2}^{\alpha / 2}
-          \frac{k\lambda R \cos \theta}{R^2} \ddif \theta \\
-      &=  \frac{k\lambda}{R} \int_{-\alpha / 2}^{\alpha / 2}
-          \cos \theta \ddif \theta \\
-      &= \frac{2k\lambda}{R} \sin(\alpha / 2)
+  \vE = \int \frac{kdq}{r^2} \vu_r
 \end{align*}
-où la dernière ligne découle du fait que $\sin(\alpha / 2) = -\sin(-\alpha
-/ 2)$.  Le champ de l'arc est donc
-\[
-  \vec{E} = \frac{2k\lambda}{R} \sin(\alpha / 2) \xhat
-\]
 
-Dans le cas d'un cercle complet, $\alpha = 2\pi$ et le sinus donne zéro, ce qui
-fait que le champ total est nul, comme il se doit.
+où $\vu_r$ est un vecteur qui pointe de l'élément de charge $dq$ vers le point
+où on essaie de calculer le champ électrique.
+
+
+
+
+\section{Champ électrique d'un plan infini}
+
+\marginnote{Lafrance \S 2.5}
+
+On peut diviser un plan infini en charges ponctuelles, en tiges infinies, en
+anneaux concentriques, etc. Peu importe la méthode qu'on choisi, lorsqu'on
+additionne toutes les contributions au champ électrique en un point, on obtient
+un résultat remarquablement simple : le champ électrique est indépendant de la
+distance à laquelle on se trouve du plan. Il pointe toujours
+perpendiculairement au plan. Si la charge par unité de surface est $\sigma$, le
+champ a une grandeur de
+\begin{align*}
+  E = \frac{\abs{\sigma}}{2\varepsilon_0}
+\end{align*}
+
+
+\begin{diapobox}
+  \marginnote{
+    \begin{center}
+      \begin{tikzpicture}[scale=0.6]
+        \draw (0, 0) -- (5, 0) -- (7, 3) -- (2, 3) -- cycle;
+        \draw[densely dashed] (3, 1.5) -- (3, 4) node[left] {$P$};
+        \fill (3, 4) circle (2pt);
+        \node[draw, circle] (q) at (5, 4) {$q$};
+        \draw[densely dashed] (5, 1.5) -- (q);
+        \draw[tblue, <->] (4.5, -1) node[left] {$z$} -- (4.5, -2)
+          -- (5.5, -2) node[below] {$y$};
+        \draw[tblue, ->] (4.5, -2) -- (4, -2.75) node[anchor=north east] {$x$};
+      \end{tikzpicture}
+    \end{center}
+  }[-5\baselineskip]
+  Une plaque de métal de \SI{2.00}{\meter\squared} porte une charge totale de
+  \SI{4.00}{\micro\coulomb}. 
+
+  Quelle est la densité de charge de cette plaque?
+
+  Quel est la grandeur du champ électrique au point $P$ situé à
+  \SI{8.00}{\centi\meter} au-dessus du plan?
+
+  On ajoute une charge de \SI{80}{\nano\coulomb} à \SI{8.00}{\centi\meter} du
+  plan, \SI{3.00}{\centi\meter} à droite du point $P$. Quel est maintenant le
+  champ électrique au point $P$?
+
+\end{diapobox}
+
+
+
+
+
+
+
+%Comment peut-on calculer le champ électrique produit par un objet chargé qui
+%n'est pas ponctuel? La formule que nous avons vue ne s'applique pas.
+
+%Nous allons d'abord considérer une tige chargée (ou un fil) de longueur $L$
+%portant une charge totale $Q$ répartie uniformément dans la tige.
+
+%Un fil n'est pas une particule ponctuelle, mais on peut le subdiviser en petits
+%morceaux.
+
+%Un segment de longueur $\Delta x$ porte une fraction de la charge totale.
+
+%\paragraph{Question}: quelle fraction de la charge $Q$ est portée par un
+%segment de longueur $\Delta x$?
+
+%\begin{eqnarray*}
+%\Delta q &=& Q \frac{\Delta x}{L} \\
+         %&=& \frac{Q}{L} \Delta x
+%\end{eqnarray*}
+
+%On appelle le rapport $Q/L$ une  \textbf{densité linéique de charge}. On
+%utilise souvent le symbole $\lambda$ pour représenter une densité linéique
+%$$\lambda = \frac{Q}{L}$$
+%dans le cas d'une tige chargée uniformément.
+
+%Donc
+%$$\Delta q = \lambda \Delta x.$$
+
+%Si $\Delta x$ est suffisamment petit, on peut considérer ce morceau de fil
+%comme une charge ponctuelle. Le champ électrique généré par ce bout de fil est
+%donc
+%\begin{eqnarray*}
+%\Delta E_x &\approx& \frac{k \Delta q}{r^2} \\
+           %&\approx& \frac{k \Delta q}{(L + d - x)^2}
+%\end{eqnarray*}
+
+%Pour déterminer le champ électrique total, il suffit d'additionner les
+%contributions de toutes les parties du fil.
+
+%\begin{eqnarray*}
+  %E_x &\approx& \sum \frac{k \Delta q}{(L + d - x)^2}
+%\end{eqnarray*}
+
+%Tout ceci est approximatif parce que les parties de fil que nous avons
+%considérées ne sont pas réellement ponctuelles. Si nous voulons obtenir un
+%résultat exact, il faut que la longueur des segments de fils tende vers $0$.
+%Alors, la somme devient une intégrale
+
+%\begin{eqnarray*}
+  %E_x &=& \lim_{\Delta q \rightarrow 0}\sum \frac{k \Delta q}{(L + d - x)^2} \\
+      %&=& \int_{fil} \frac{k dq}{(L + d - x)^2} \\
+      %&=& \int_0^L \frac{k\lambda dx}{(L + d - x)^2} \\
+      %&=& \left[ \frac{k\lambda}{L + d - x} \right]_0^L \\
+      %&=& k\lambda \left( \frac{1}{L + d - L} - \frac{1}{L + d} \right) \\
+      %&=& k\lambda \left( \frac{1}{d} - \frac{1}{L + d} \right) \\
+      %&=& \frac{k\lambda L}{d(L+d)}
+%\end{eqnarray*}
+
+%Deux cas limites intéressants:
+
+%\begin{itemize}
+  %\item si $d \gg L$, on trouve $kQ/d^2$
+  %\item si $d \ll L$, on trouve $k\lambda / d$
+%\end{itemize}
+
+
+%\minisec{Champ d'une distribution de charge - Principe général}
+
+%On peut généraliser les idées qu'on a appliqué au calcul du champ produit par
+%une tige. Si on a un objet de forme quelconque et qu'on cherche le champ
+%électrique produit en un point $P$, on peut trouver le champ en divisant
+%l'objet en plein de petits morceaux portant chacun une charge $dq$.
+
+
+%\subsection*{Exercice dirigé --- Champ électrique au-dessus d'une tige chargée}
+
+%\paragraph{Partie 1 --- Symétrie et orientation du champ}
+%\marginpar{5 minutes}
+
+%En utilisant la symétrie de la situation, déterminer la direction dans la
+%laquelle le champ électrique doit être orienté au point $P$.
+
+%\begin{center}
+  %\includegraphics[scale=0.5]{02-champ-electrique/figures/champ-fil-3.pdf}
+%\end{center}
+
+
+%\textit{Solution. L'idée clé est que la composante horizontale du champ doit
+  %être nulle puisque les composantes horizontales des éléments de chaque côté
+  %du centre de la tige s'annulent deux à deux. La situation est illustrée
+  %ci-dessus.}
+
+%\paragraph{Partie 2 --- Champ produit par un élément de longueur}
+
+%À la lumière de la partie 1, trouver une expression pour la composante
+%verticale du champ électrique produit par un élément de longueur, i.e.: on
+%cherche une expression pour $dE_y$.
+
+%\begin{center}
+  %\begin{tikzpicture}
+    %\draw (-4, 0) -- (4, 0);
+    %\draw (-4, -0.1) -- (4, -0.1);
+    %\coordinate (P) at (0, 3);
+    %\coordinate (O) at (0, 0);
+    %\coordinate (l) at (-2, 0);
+    %\coordinate (r) at (2, 0);
+    %\node[anchor=west] (Pn) at (P) {$P$};
+    %\fill (P) circle(2pt);
+    %\draw[<->] (O) -- node[fill=white] {$D$} ($(P) - (0, 0.08)$);
+    %\fill ($(l) - (0.1, 0)$) rectangle ++(0.2, -0.1);
+    %\fill ($(r) + (0.1, 0)$) rectangle ++(-0.2, -0.1);
+    %\draw[dashed] (l) -- (P);
+    %\draw[dashed] (r) -- node[right] {$r$} (P);
+    %\draw[very thick,->] (P) -- ++({atan(3/2)}:1.5);
+    %\draw[very thick,->] (P) -- ++({180-atan(3/2)}:1.5);
+    %\draw ($(P) - (0, 0.5)$) arc (-90:{-atan(3/2}:0.5);
+    %\node at ($(P) + (0.2, -0.7)$) {$\theta$};
+    %\draw (0, -0.1) -- (0, -0.3) node[below] {$0$};
+    %\draw (r) -- ++(0, -0.3) node[below] {$x$};
+    %\draw[->] (-3.5, 1.5) -- (-2, 1.5) node[below] {$x$};
+    %\draw[->] (-3.5, 1.5) -- (-3.5, 3) node[left] {$y$};
+  %\end{tikzpicture}
+%\end{center}
+
+  %Un \textbf{élément de longueur} $d x$ produit un champ dont seule la
+  %composante verticale demeure (la composante horizontale étant annulée par
+  %celle d'un élément de longueur situé du côté opposé du fil.
+
+  %Pour trouver le champ électrique $dE_y$ produit, on fait l'approximation que
+  %l'élément de longueur est suffisamment petit pour qu'on puisse le considérer
+  %comme une charge ponctuelle. Le champ est donc
+
+  %$$d E_y = \frac{k d q}{r^2} \cos\theta.$$
+
+  %La charge est $dq = \lambda dx$ où $\lambda = Q / L$. La distance peut
+  %s'écrire
+
+  %$$d E_y = \frac{k \lambda dx}{r^2} \cos\theta.$$
+
+
+
+%\paragraph{Partie 3 --- Diminution du nombre de variables}
+
+%L'expression obtenue précédemment contient trois variables : $x$, $r$ et
+%$\theta$. Or, le fil est un objet à une dimension, il devrait donc être
+%possible d'exprimer l'élément de champ en terme d'une seule variable. Utiliser
+%la trigonométrie pour éliminer deux des trois variables.
+
+
+%On exprime tout en fonction de $\theta$. Il faut donc éliminer $x$ et $r$.
+
+%\begin{align*}
+  %\cos \theta &= \frac{D}{r} \\
+           %r  &= \frac{D}{\cos\theta}
+%\end{align*}
+
+%\begin{align*}
+  %\tan \theta &= \frac{x}{D} \\
+           %x  &= D\tan\theta \\
+          %dx  &= D\sec^2\theta d\theta
+%\end{align*}
+
+%Donc
+
+  %$$d E_y = \frac{k \lambda D\sec^2\theta d\theta}{D^2 / \cos^2\theta} \cos\theta.$$
+
+%qui se simplifie considérablement
+
+  %$$d E_y = \frac{k \lambda d\theta}{D} \cos\theta.$$
+
+
+
+%\paragraph{Partie 4 --- Application du principe de superposition}
+
+%Nous avons déterminé la composante verticale du champ produit par un élément de
+%longueur $dx$. Reste à déterminer la composante verticale du champ électrique
+%total au point $P$. Pour ce faire, nous n'avons qu'à intégrer l'expression que
+%nous avons obtenue sur toute la longueur de la tige. En faisant cela, nous
+%appliquons le principe de superposition.
+
+%\begin{align*}
+  %E_y &= \int_{\theta_1}^{\theta_2} \frac{k \lambda d\theta}{D} \cos\theta \\
+      %&= \frac{k \lambda}{D} \left[\sin\theta\right]_{\theta_1}^{\theta_2} \\
+      %&= \frac{k \lambda}{D} \left(\sin \theta_2 - \sin \theta_1 \right) \\
+%\end{align*}
+
+%Cette expression se simplifie en remarquant que
+%\begin{align*}
+  %\sin \theta_1 &= -\frac{L/2}{\sqrt{L^2/4 + D^2}} \\
+  %\sin \theta_2 &= \frac{L/2}{\sqrt{L^2/4 + D^2}} \\
+%\end{align*}
+
+%Donc
+%\[
+  %E_y = \frac{k \lambda}{D}\frac{L}{\sqrt{L^2/4 + D^2}}
+%\]
+
+%D'où
+%$$\vec{E} = \frac{k \lambda}{D}\frac{L}{\sqrt{L^2/4 + D^2}}\yhat$$
+
+
+%\paragraph{Partie 5 --- Vérification des cas extrêmes}
+
+%C'est toujours une bonne idée de vérifier les cas extrêmes pour s'assurer que
+%l'expression obtenue est cohérente dans ces cas. Qu'arrive-t-il si nous sommes
+%très loin de la tige ($D \gg L$)? Qu'arrive-t-il si nous sommes très proche
+%($D \ll L$)?
+
+%Loin:
+%\[
+  %E_y = \frac{k Q}{D^2}
+%\]
+
+%Proche: $\theta_1 = -\pi/2$ et $\theta_2 = \pi/2$ donc la différence des sinus
+%est $2$ et le champ est
+%\[
+  %E_y = \frac{2k\lambda}{D}
+%\]
+
+
+%\subsection*{Champ électrique d'une plaque infinie}
+
+%\paragraph{Partie 1 --- Symétrie et orientation du champ}
+%\marginpar{5 minutes}
+
+%En utilisant la symétrie de la situation, déterminer la direction dans la
+%laquelle le champ électrique doit être orienté au point $P$.
+
+%\begin{center}
+  %\includegraphics[scale=0.5]{02-champ-electrique/figures/champ-plaque-uniforme-1.pdf}
+%\end{center}
+
+
+%\textit{Solution. L'idée clé est que la composante horizontale du champ doit
+  %être nulle puisque les composantes horizontales des éléments de chaque côté
+  %du centre de la tige s'annulent deux à deux. La situation est illustrée
+  %ci-dessus.}
+
+%\paragraph{Partie 2 --- Champ produit par un élément de surface}
+
+%À la lumière de la partie 1, trouver une expression pour la composante
+%verticale du champ électrique produit par un élément de surface, i.e.: on
+%cherche une expression pour $dE_z$.
+
+%\begin{center}
+  %\includegraphics[scale=0.5]{02-champ-electrique/figures/champ-plaque-uniforme-2.pdf}
+%\end{center}
+
+%L'idée clé est de voir le plan chargé comme un ensemble de fils infinis collés
+%les uns aux autres. Chaque fil a une largeur $dx$ et produit un champ dont
+%seule la composante verticale demeure (la composante horizontale étant annulée
+%par un fil situé du côté opposé du plan).
+
+%Pour trouver le champ électrique $dE_z$ produit, on fait l'approximation que
+%l'élément de longueur est suffisamment petit pour qu'on puisse le considérer
+%comme un fil. Le champ est donc
+
+%$$d E_z = \frac{2k \lambda}{D} \cos\theta.$$
+
+%La densité de charge linéique du fil est donnée par la densité de charge
+%surfacique de la plaque multipliée par la largeur du fil
+
+%$$\lambda = \sigma dx.$$
+
+%La champ est donc
+
+%$$d E_z = \frac{2k \sigma dx}{D} \cos\theta.$$
+
+
+
+%\paragraph{Partie 3 --- Diminution du nombre de variables}
+
+%L'expression obtenue précédemment contient trois variables : $x$, $D$ et
+%$\theta$. Or, on peut construire le plan en collant des fils le long d'un seul
+%axe donc il est possible de tout exprimer en terme d'une seule variable. Utiliser
+%la trigonométrie pour éliminer deux des trois variables.
+
+
+%On exprime tout en fonction de $\theta$. Il faut donc éliminer $x$ et $D$.
+
+%\begin{align*}
+  %\cos \theta &= \frac{d}{D} \\
+           %D  &= \frac{d}{\cos\theta}
+%\end{align*}
+
+%\begin{align*}
+  %\tan \theta &= \frac{x}{d} \\
+           %x  &= d\tan\theta \\
+          %dx  &= d\sec^2\theta d\theta
+%\end{align*}
+
+%Donc
+
+  %$$d E_z = \frac{2k \sigma d\sec^2\theta d\theta}{d / \cos\theta} \cos\theta.$$
+
+%qui se simplifie considérablement
+
+  %$$d E_z = 2k \sigma d\theta.$$
+
+
+
+%\paragraph{Partie 4 --- Application du principe de superposition}
+
+%Nous avons déterminé la composante verticale du champ produit par un élément de
+%surface. Reste à déterminer la composante verticale du champ électrique
+%total au point $P$. Pour ce faire, nous n'avons qu'à intégrer l'expression que
+%nous avons obtenue sur toute la largeur de la plaque. En faisant cela, nous
+%appliquons le principe de superposition.
+
+%\begin{align*}
+  %E_z &= \int_{\theta_1}^{\theta_2} 2k \sigma d\theta \\
+      %&= 2k \sigma \left[\theta\right]_{\theta_1}^{\theta_2} \\
+      %&= 2k \sigma \left(\theta_2 - \theta_1 \right) \\
+%\end{align*}
+
+%Pour couvrir la plaque complètement, on doit prendre $\theta_1 = -\pi/2$ et
+%$\theta_2 = \pi/2$.
+
+%Donc
+%\begin{align*}
+  %E_z &= 2k \sigma \pi \\
+      %&= \frac{2 \sigma \pi}{4\pi\varepsilon_0} \\
+      %&= \frac{\sigma}{2\varepsilon_0}
+%\end{align*}
+
+%D'où
+%$$\vec{E} = \frac{\sigma}{2\varepsilon_0} \zhat$$
+
+
+%\paragraph{Partie 5 --- Vérification des cas extrêmes}
+
+%C'est toujours une bonne idée de vérifier les cas extrêmes pour s'assurer que
+%l'expression obtenue est cohérente dans ces cas. Qu'arrive-t-il si nous sommes
+%très loin de la plaque? Qu'arrive-t-il si nous sommes très proche?
+
+%Le résultat que nous avons obtenu est surprenant en ce sens qu'il ne dépend pas
+%de la distance du plan. Évidemment, un plan infiniment grand n'existe pas. Par
+%conséquent, le résultat n'est valable que pour un plan très grand duquel on est
+%suffisamment proche.
+
+
+%\subsection*{Champ électrique d'un arc de cercle chargé}
+
+%On considère un arc de cercle de rayon $R$ qui couvre un angle $\alpha$ et
+%porte une densité de charge linéique $\lambda$.  Quel est le champ électrique
+%au centre du cercle?
+
+%\begin{center}
+  %\begin{tikzpicture}
+    %\draw[decorate, decoration={
+      %markings, mark=between positions 0.1 and 1 step 6mm with {
+        %\node (0, 0) {$+$};
+    %}}] (-40:2.5) arc (-40:40:2.5);
+    %\draw (-40:2.7) arc (-40:40:2.7);
+    %\draw (-40:2.3) arc (-40:40:2.3);
+    %\draw[fill=black] (0, 0) circle (1pt);
+    %\draw (0, 0) -- node[fill=white] {$R$} ++(40:2.3);
+    %\draw (0, 0) -- ++(-40:2.3);
+    %\draw (-40:0.3) arc (-40:40:0.3);
+    %\draw[dashed, <-] (-1, 0) node[below] {$x$} -- (3, 0);
+    %\draw[fill=black!20] (-30:2.3) -- (-30:2.7) arc (-30:-25:2.7) -- (-25:2.3) -- cycle;
+    %\draw[dashed] (-27.5:2.3) -- (0, 0);
+    %\draw[ultra thick, ->] (0, 0) -- (152.5:2) node[above] {$d\vec{E}$};
+    %\draw (0:1) arc (0:-27.5:1);
+    %\draw[->|] (-34:2.8) -- (-30:2.8);
+    %\draw[->|] (-21:2.8) -- (-25:2.8);
+    %\node at (-27:3.2) {$Rd\theta$};
+    %\node at (-14:1.3) {$\theta$};
+    %\node[fill=white] at (0:0.6) {$\alpha$};
+  %\end{tikzpicture}
+%\end{center}
+
+%On prend un axe $x$ qui passe par le centre du cercle et le centre de l'arc.
+%Par symétrie, le champ électrique au centre n'aura qu'une composante le long de
+%l'axe $x$.
+
+%Un élément de longueur qui couvre un angle $\dif \theta$ à un angle $\theta$ a
+%une longueur $R\ddif \theta$ et porte une charge $\dif q = \lambda R \ddif
+%\theta$. La composante $x$ du champ créé par cet élément de longueur est
+%\[
+  %\dif E_x =  \frac{k\lambda R \ddif \theta}{R^2} \cos \theta
+%\]
+%Le champ total s'obtient en intégrant l'expression ci-dessus entre
+%$-\alpha / 2$ et $\alpha / 2$.
+%\begin{align*}
+  %E_x &= \int_{-\alpha / 2}^{\alpha / 2}
+          %\frac{k\lambda R \cos \theta}{R^2} \ddif \theta \\
+      %&=  \frac{k\lambda}{R} \int_{-\alpha / 2}^{\alpha / 2}
+          %\cos \theta \ddif \theta \\
+      %&= \frac{2k\lambda}{R} \sin(\alpha / 2)
+%\end{align*}
+%où la dernière ligne découle du fait que $\sin(\alpha / 2) = -\sin(-\alpha
+%/ 2)$.  Le champ de l'arc est donc
+%\[
+  %\vec{E} = \frac{2k\lambda}{R} \sin(\alpha / 2) \xhat
+%\]
+
+%Dans le cas d'un cercle complet, $\alpha = 2\pi$ et le sinus donne zéro, ce qui
+%fait que le champ total est nul, comme il se doit.
 
 
 %\subsection*{Le champ électrique d'un anneau chargé}
@@ -933,108 +1428,110 @@ fait que le champ total est nul, comme il se doit.
 %The strength of the field does not depend of the distance from the plane.
 
 
-\sectionline
 
 
-\section{Équilibre électrostatique}
+\section{Mouvement d'une particule chargée dans un champ uniforme}
 
-\marginpar{Tremblay \S 2.9}
+\marginnote{
+  Tremblay \S 2.6
 
-\paragraph{Objectif}
-
-\begin{enumerate}
-  \item L'étudiant comprendra ce qui se passe avec les charges dans un
-    conducteur soumis à un champ électrique.
-  \item L'étudiant saura comment déterminer le champ électrique dans un
-    conducteur de même que dans une cavité à l'intérieur d'un conducteur.
-\end{enumerate}
+  Lafrance \S 2.7
+}
 
 
-\subsection*{Le champ électrique à l'intérieur du conducteur est nul}
-
-Preuve: s'il ne l'était pas, le champ électrique à l'intérieur exercerait une
-force sur les électrons libres. Ils se déplaceraient dans la direction opposée
-au champ électrique. On aurait alors une charge $+$ solitaire et une charge $-$
-solitaire qui généreraient un champ électrique dans la direction opposée à
-celle du champ initial. Le processus continuerait tant et aussi longtemps que
-le champ électrique initial n'a pas été complètement neutralisé.
-
+Si le champ $\vec{E}$ est le même partout dans l'espace on dit qu'il est
+\textbf{uniforme}. Dans un champ uniforme, une particule chargée subit
+une accélération constante. En effet,
+$$\vec{F} = q\vec{E} = m\vec{a}$$
+par la deuxième loi de Newton. Donc
+$$\vec{a} = \frac{q\vec{E}}{m}$$
+est constante.
 
 
-\subsection*{Le champ électrique à la surface d'un conducteur est toujours
-  perpendiculaire à la surface}
+\minisec{Tube à rayons cathodiques}
+\marginnote{30 minutes}
 
-Preuve: si ce n'était pas le cas, on aurait un mouvement des électrons libres
-proches de la surface qui finirait par neutraliser la composante tangentielle
-du champ.
+Il y a quelques années, téléviseurs et écrans d'ordinateur fonctionnaient
+avec des tubes à rayons cathodiques.
 
+\marginnote{
+\begin{center}
+  \includegraphics[scale=0.15]{02-champ-electrique/figures/viewsonic-crt.png}
 
+  \begin{tikzpicture}[>=stealth, scale=0.6]
+    \draw plot[smooth cycle] coordinates {(0, 1) (2, 1.5) (6, 3) (6, -3) (2, -1.5) (0, -1)};
+    \draw[ultra thick] (0.8, 0.5) -- (2.5, 0.5);
+    \draw[ultra thick] (0.8, -0.5) -- (2.5, -0.5);
+    \foreach \x in {1.1, 1.5, 1.9, 2.3} {
+      \node at (\x, 0.7) {$+$};
+      \node at (\x, -0.7) {$-$};
+    }
+    \draw[thick, blue] plot[smooth] coordinates {(0, 0) (0.8, 0) (1.2, 0.02) (1.6, 0.04) (2, 0.08) (2.4, 0.16) (2.6, 0.2)} -- (6.4, 1.5);
+    \draw[|<->|] (7, 3) -- node[fill=white] {$D$} (7, -3);
+    \draw[|<->|] (0.8, -1.1) -- node[fill=white] {$l$} (2.5, -1.1);
+    \draw[<->|] (2.5, -1.1) -- node[fill=white] {$L$} (6.4, -1.1);
+  \end{tikzpicture}
+\end{center}
+}
 
-\subsection*{Dans un conducteur chargé, toute la charge se retrouve à la surface
-  extérieure}
+Le principe est simple: un élément chauffant produit un faisceau d'électrons
+qui est accéléré dans un champ électrique. Les électrons sont ensuite déviés
+par un autre champ électrique. Lorsqu'ils atteignent l'écran, ils transfèrent
+leur énergie à des phosphores qui produisent de la lumière.
 
-Preuve: Le champ électrique à l'intérieur doit être nul. Si une charge nette
-macroscopique se trouvait à l'intérieur, à proximiter de cette charge, le champ
-électrique serait non-nul.
+Les plaques métalliques génèrent un champ électrique uniforme $\vec{E}$.
+Les dimensions du tube sont $l = \SI{2}{\centi\meter}$, $L =
+\SI{40}{\centi\meter}$ et $D = \SI{60}{\centi\meter}$.  Avant de passer entre
+les plaques du déflecteur, la vitesse des électrons est
+5\% de la vitesse de la lumière vers la droite.
 
-
-
-\subsection*{Dans une cavité à l'intérieur d'un conducteur, le champ électrique est
-  nul}
-
-On crée une cavité dans le conducteur. Tout le matériel enlevé est
-neutre à cause du paragraphe précédent. Par conséquent, le matériel enlevé
-n'exerçait aucune force sur les charges situées à la surface du conducteur.
-Comme les charges à la surface étaient à l'équilibre avant d'enlever le
-matériel, enlever du matériel qui n'exerçait aucune force ne changera pas leur
-état d'équilibre.
-
-Le champ électrique où le matériel a été enlevé était nul avant de faire le
-trou. On a enlevé du matériel neutre qui ne contribuait donc pas au champ
-électrique. Les charges qui étaient à la surface n'ont pas bougé (argument du
-paragraphe précédent). Le champ électrique est déterminé complètement par la
-configuration des charges. Par conséquent, le champ électrique dans la cavité
-doit encore être nul.
-
-
-\subsection*{Exercice avec des sphères métalliques}
-
-Une charge $q = \si{4}{mC}$ dans une cavité au centre d'une sphère métallique.
-Quelle est la charge sur la surface intérieur et la surface extérieur de la
-sphère? Tracer les lignes de champ.
+Déterminer la norme du champ électrique nécessaire pour que les électrons
+atteignent le haut de l'écran.
 
 
-\subsection*{Champ d'un conducteur sphérique (ou isolant uniformément chargé)}
+Soit $v_x$ et $v_y$ les composantes horizontales et verticales de la vitesse
+des électrons à leur entrée entre les deux plaques.
 
-En réfléchissant aux lignes de champ, on peut voir que le champ à l'extérieur
-d'une sphère métallique chargée est le même que si toute la charge était
-concentré au centre.
+Pas de force dans la direction $x$ donc $v_x$ est constante: $v_x = 0.05c$.
 
+Le temps requis pour que les électrons traversent les plaques est
+\[
+  t_l = \frac{l}{v_x}
+\]
 
-\section{Champ électrique dans les diélectriques}
-
-\marginpar{Tremblay \S 2.10}
-
-\subsection*{Constante diélectrique}
-
-\marginpar{5 minutes}
-
-Le champ électrique induit dans un diélectrique est en général proportionnel au
-champ électrique externe
-$$\vE_\text{diel} = \alpha \vE_\text{vide}$$
-donc le champ électrique total est
-$$\vE = \vE_\text{vide} + \vE_\text{diel} = (1 + \alpha) \vE_\text{vide}.$$
-On définit la \textbf{constante diélectrique} comme
-$$\kappa = \frac{1}{1 + \alpha}$$
-ie
-$$\vE = \frac{1}{\kappa} \vE_\text{vide}.$$
-
-
-\subsection*{Rigidité diélectrique}
-
-Si le champ électrique externe appliqué sur un diélectrique est trop élevé, les
-électrons seront arrachés aux atomes et un courant pourra traverser le
-diélectrique. C'est ce qu'on appelle une \textbf{décharge}. Chaque matériau est
-capable de supporter un champ électrique maximum qu'on appelle la
-\textbf{rigidité diélectrique}.
-
+Pendant la traversée des plaques, les électrons sont soumis à une force
+constante vers le haut dont la grandeur est
+\[
+  F = eE
+\]
+où $E$ est la grandeur du champ électrique. Par la deuxième loi de Newton
+\[
+  a_y = \frac{eE}{m}.
+\]
+La composante verticale de la vitesse à la sortie des plaques est donc
+\[
+  v_{yl} = \frac{eE t_l}{m} = \frac{eEl}{mv_x}
+\]
+Le déplacement vertical pendant le passage entre les plaques est
+\begin{eqnarray*}
+  y_l &=& \frac{1}{2} a_y t_l^2 \\
+  &=& \frac{1}{2} \frac{eE}{m} \frac{l^2}{v_x^2} \\
+  &=& \frac{eEl^2}{2mv_x^2}
+\end{eqnarray*}
+Pour la partie après les plaques, il n'y a pas de force, donc vitesse
+constante.
+\[
+  t_L = \frac{L}{v_x}
+\]
+et
+\begin{eqnarray*}
+  y_L &=& v_{yl} t_L \\
+  &=& \frac{eEl}{mv_x}\frac{L}{v_x} \\
+  &=& \frac{eElL}{mv_x^2}.
+\end{eqnarray*}
+Pour atteindre le haut de l'écran, $y_L = D/2$ donc
+\begin{eqnarray*}
+  \frac{D}{2} &=& \frac{eEl^2}{2mv_x^2} + \frac{eElL}{mv_x^2} \\
+   &=& \frac{eEl}{mv_x^2} \left(\frac{l}{2} + L\right) \\
+  E &=& \frac{Dmv_x^2}{2el (l/2 + L)} = \SI{46.7}{kN/C}
+\end{eqnarray*}
