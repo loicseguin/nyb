@@ -105,7 +105,7 @@
   On place des fragments d'ADN dans un appareil d'électrophorèse sur gel et on
   active un champ électrique de \SI{500}{\newton\per\coulomb}. La densité de
   charge de l'ADN est environ \SI{-942}{\pico\coulomb\per\meter}. La densité de
-  masse est de \SI{3.155e-21}{\gram\per\meter}.
+  masse est de \SI{3.155e-21}{\gram\per\nano\meter}.
 
   \vspace{\baselineskip}
   \only<1-2>{
@@ -127,7 +127,7 @@
     \begin{enumerate}[A.]
       \item \SI{9.8}{\meter\per\second\squared}
       \item \SI{6.31e-24}{\meter\per\second\squared}
-      \item<alert@4> \SI{1.493e17}{\meter\per\second\squared}
+      \item<alert@4> \SI{1.493e8}{\meter\per\second\squared}
       \item \SI{1.486e-32}{\meter\per\second\squared}
     \end{enumerate}
   }
@@ -207,7 +207,7 @@
 \begin{frame}{Exercice}
   Une charge $q = \SI{30}{\micro\coulomb}$ est placée à \SI{160}{cm} du sol. À
   droite de cette charge, une charge $Q = \SI{-50}{\micro\coulomb}$ est placée
-  à \SI{2}{m} au-dessus du sol. La distance entre les deux charges est $D =
+  à \SI{2}{m} au-dessus du sol. La distance horizontale entre les deux charges est $D =
   \SI{3}{m}$.
 
   Calculer le champ électrique au point $P$ situé à \SI{1}{m} à droite de la
@@ -229,7 +229,7 @@
         \footnotesize{\url{https://www.st-andrews.ac.uk/~physapps/fande/Electric_Field_Lines.html}}
       };
       \only<5->{
-        \draw[fill] (1.6, 1) circle (1pt) node[above] {\textbf{A}};
+        \draw[fill] (1.6, 1) circle (1pt) node[above] {\alert<6>{\textbf{A}}};
         \draw[fill] (2.2, 1.3) circle (1pt) node[above] {\textbf{B}};
         \draw[fill] (-2, -0.4) circle (1pt) node[above] {\textbf{C}};
         \draw[fill] (-0.3, 0.3) circle (1pt) node[above] {\textbf{D}};
@@ -270,7 +270,7 @@
   \begin{center}
   \begin{tikzpicture}
     \matrix[row sep=1em, column sep=1em, ampersand replacement=\&] {
-    \node at (0, -2.5) {(a)};
+    \node at (0, -2.5) {(A)};
     \fill (0, 1.5) circle(1pt);
     \node[left] at (0, 1.5) {$P$};
     \draw (0,-2) -- (0,0);
@@ -278,7 +278,7 @@
     \draw (0,0) -- (0,2);
     \draw (0,0) -- ++(-30:0.75);
     \node at (5:0.5) {$R$}; \&
-    \node at (0, -2.5) {(b)};
+    \node at (0, -2.5) {(B)};
     \fill (0, 1.5) circle(1pt);
     \node[left] at (0, 1.5) {$P$};
     \draw (0,-2) -- (0,0);
@@ -288,7 +288,7 @@
     \node at (-05:0.8) {$2R$}; \&
     \fill (0, 1.5) circle(1pt);
     \node[left] at (0, 1.5) {$P$};
-    \node at (0, -2.5) {(c)};
+    \node at (0, -2.5) {(C)};
     \draw (0,-2) -- (0,0);
     \draw[fill=black!10] (0,0) ellipse[x radius=2, y radius=1]; 
     \draw[fill=white] (0,0) ellipse[x radius=1, y radius=0.5];

@@ -3,9 +3,13 @@
 
 \section{Équilibre électrostatique}
 
-\marginpar{Tremblay \S 2.9}
+\marginnote{
+  Tremblay \S 2.9
 
-\paragraph{Objectif}
+  Lafrance \S 3.5
+}
+
+\minisec{Objectif}
 
 \begin{enumerate}
   \item L'étudiant comprendra ce qui se passe avec les charges dans un
@@ -15,7 +19,7 @@
 \end{enumerate}
 
 
-\subsection*{Le champ électrique à l'intérieur du conducteur est nul}
+\minisec{Le champ électrique à l'intérieur du conducteur est nul}
 
 Preuve: s'il ne l'était pas, le champ électrique à l'intérieur exercerait une
 force sur les électrons libres. Ils se déplaceraient dans la direction opposée
@@ -26,7 +30,7 @@ le champ électrique initial n'a pas été complètement neutralisé.
 
 
 
-\subsection*{Le champ électrique à la surface d'un conducteur est toujours
+\minisec{Le champ électrique à la surface d'un conducteur est toujours
   perpendiculaire à la surface}
 
 Preuve: si ce n'était pas le cas, on aurait un mouvement des électrons libres
@@ -35,16 +39,16 @@ du champ.
 
 
 
-\subsection*{Dans un conducteur chargé, toute la charge se retrouve à la surface
+\minisec{Dans un conducteur chargé, toute la charge se retrouve à la surface
   extérieure}
 
 Preuve: Le champ électrique à l'intérieur doit être nul. Si une charge nette
-macroscopique se trouvait à l'intérieur, à proximiter de cette charge, le champ
+macroscopique se trouvait à l'intérieur, à proximité de cette charge, le champ
 électrique serait non-nul.
 
 
 
-\subsection*{Dans une cavité à l'intérieur d'un conducteur, le champ électrique est
+\minisec{Dans une cavité à l'intérieur d'un conducteur, le champ électrique est
   nul}
 
 On crée une cavité dans le conducteur. Tout le matériel enlevé est
@@ -62,40 +66,37 @@ configuration des charges. Par conséquent, le champ électrique dans la cavité
 doit encore être nul.
 
 
-\subsection*{Exercice avec des sphères métalliques}
+\begin{diapobox}
+ Exercices avec une cage de Faraday
+\end{diapobox}
 
-Une charge $q = \si{4}{mC}$ dans une cavité au centre d'une sphère métallique.
-Quelle est la charge sur la surface intérieur et la surface extérieur de la
-sphère? Tracer les lignes de champ.
-
-
-\subsection*{Champ d'un conducteur sphérique (ou isolant uniformément chargé)}
-
-En réfléchissant aux lignes de champ, on peut voir que le champ à l'extérieur
-d'une sphère métallique chargée est le même que si toute la charge était
-concentré au centre.
 
 
 \section{Champ électrique dans les diélectriques}
 
-\marginpar{Tremblay \S 2.10}
+\marginnote{
+  Tremblay \S 2.10
 
-\subsection*{Constante diélectrique}
+  Lafrance \S 3.6
+}
 
-\marginpar{5 minutes}
+\minisec{Constante diélectrique}
 
 Le champ électrique induit dans un diélectrique est en général proportionnel au
-champ électrique externe
-$$\vE_\text{diel} = \alpha \vE_\text{vide}$$
-donc le champ électrique total est
-$$\vE = \vE_\text{vide} + \vE_\text{diel} = (1 + \alpha) \vE_\text{vide}.$$
+champ électrique externe et dans la direction opposée au champ externe
+$$\vE_\text{diel} = -\alpha \vE_\text{vide}$$
+pour une certaine constante positive $\alpha$. Le champ électrique total est
+donc
+$$\vE = \vE_\text{vide} + \vE_\text{diel} = (1 - \alpha) \vE_\text{vide}.$$
 On définit la \textbf{constante diélectrique} comme
-$$\kappa = \frac{1}{1 + \alpha}$$
-ie
+$$\kappa \equiv \frac{1}{1 - \alpha}$$
+c'est-à-dire que
 $$\vE = \frac{1}{\kappa} \vE_\text{vide}.$$
+La constante diélectrique est toujours plus grande ou égale à 1 donc le champ
+dans un diélectrique est plus faible que le champ extérieur.
 
 
-\subsection*{Rigidité diélectrique}
+\minisec{Rigidité diélectrique}
 
 Si le champ électrique externe appliqué sur un diélectrique est trop élevé, les
 électrons seront arrachés aux atomes et un courant pourra traverser le

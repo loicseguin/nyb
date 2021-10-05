@@ -118,7 +118,7 @@ de $q_1$ en faisant simplement
   On place des fragments d'ADN dans un appareil d'électrophorèse sur gel et on
   active un champ électrique de \SI{500}{\newton\per\coulomb}. La densité de
   charge de l'ADN est environ \SI{-942}{\pico\coulomb\per\meter}. La densité de
-  masse est de \SI{3.155e-21}{\gram\per\meter}.
+  masse est de \SI{3.155e-21}{\gram\per\nano\meter}.
 
   Quelle est la force électrique sur un fragment d'ADN de
   \SI{10.0}{\micro\meter}?
@@ -152,8 +152,8 @@ de $q_1$ en faisant simplement
       &= \frac{\abs{\lambda}LE}{\lambda_m L} \\
       &= \frac{\abs{\lambda}E}{\lambda_m} \\
       &= \frac{\SI{942e-12}{\coulomb\per\meter} \cdot
-        \SI{500}{\newton\per\coulomb}}{\SI{3.155e-24}{\kilogram\per\meter}}  \\
-      &= \SI{1.493e17}{\meter\per\second\squared}
+        \SI{500}{\newton\per\coulomb}}{\SI{3.155e-15}{\kilogram\per\meter}}  \\
+      &= \SI{1.493e8}{\meter\per\second\squared}
   \end{align*}
   L'accélération est vers l'électrode positive.
 \end{reponsebox}
@@ -1535,3 +1535,21 @@ Pour atteindre le haut de l'écran, $y_L = D/2$ donc
    &=& \frac{eEl}{mv_x^2} \left(\frac{l}{2} + L\right) \\
   E &=& \frac{Dmv_x^2}{2el (l/2 + L)} = \SI{46.7}{kN/C}
 \end{eqnarray*}
+
+
+\section{Résumé}
+
+\begin{itemize}
+  \item Un vecteur de champ électrique est associé à chaque point de l'espace.
+  \item Le champ électrique en un point est obtenu en plaçant une charge $q$ à
+    cet endroit, en mesurant la force électrique sur la charge $\vF$ et en
+    calculant la force par unité de charge $\vE = \vF / q$.
+  \item Le champ produit par une charge ponctuelle est $\vE = kq / r^2 \vu_r$.
+  \item Le principe de superposition pour les champs.
+  \item Interpréter les lignes de champ électrique.
+  \item Appliquer le principe de superposition et le calcul intégral pour
+    calculer le champ d'une distribution continue de charge.
+  \item Champ électrique d'un plan infini uniformément chargé.
+  \item Analyser le mouvement d'une particule chargée dans un champ électrique
+    uniforme.
+\end{itemize}

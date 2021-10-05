@@ -1,0 +1,137 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\input{../common}
+\usepackage[version=3]{mhchem}
+
+\setbeamercolor{title}{fg=tblue}
+\setbeamercolor{frametitle}{fg=tblue}
+\setbeamercolor{structure}{fg=tblue}
+
+% Make footnotesize smaller
+\makeatletter
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize\@viipt{11}%
+   \abovedisplayskip 8\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 4\p@ \@plus2\p@ \@minus2\p@
+               \parsep 2\p@ \@plus\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+\makeatother
+
+\title{Électricité et magnétisme}
+\subtitle{Chapitre 3 - Théorème de Gauss}
+\date{13 septembre 2021}
+\author{Loïc Séguin-Charbonneau}
+\institute{Cégep Édouard-Montpetit}
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[t]{Objet conducteur dans un champ uniforme}
+  On place un objet métallique entre deux grandes plaques chargées
+  uniformément.
+
+  Laquelle des images ci-dessous montre
+  la \textbf{séparation de charges induite} dans l'objet métallique?
+
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figures/champ_uniforme_charges_induites.png}
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}[t]{Objet conducteur dans un champ uniforme}
+  On place un objet métallique entre deux grandes plaques chargées
+  uniformément.
+
+  Laquelle des images ci-dessous montre
+  le champ électrique produit par les \textbf{grandes plaques} seulement?
+
+
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figures/champ_uniforme_champ_plaque.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}[t]{Objet conducteur dans un champ uniforme}
+  On place un objet métallique entre deux grandes plaques chargées
+  uniformément.
+
+  Laquelle des images ci-dessous montre
+  le champ électrique produit par les \textbf{charges induites de l'objet
+    métallique} seulement?
+
+
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figures/champ_uniforme_champ_blob.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}[t]{Objet conducteur dans un champ uniforme}
+  On place un objet métallique entre deux grandes plaques chargées
+  uniformément.
+
+  Laquelle des images ci-dessous montre
+  le champ électrique \textbf{total}?
+  \vspace{\baselineskip}
+
+
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figures/champ_uniforme_champ_net.png}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}[t]{Cage de Faraday}
+  Gontran s'enferme dans une cage en métal pour bloquer les ondes radios en
+  provenance d'une antenne à proximité.
+
+  \onslide<3>{
+    À un certain moment, le champ électrique autour de Gontran et sa cage
+    pointe vers le haut. Comment sont réparties les charges électriques dans le
+    matériel qui compose la cage de Gontran à ce moment? Quel est le champ
+    électrique à l'intérieur de la cage?
+  }
+
+  \begin{center}
+    \includegraphics<1>[width=0.9\textwidth]{figures/faraday_0.png}
+
+    \includegraphics<2>[width=0.9\textwidth]{figures/faraday_1.png}
+
+    \includegraphics<3>[width=0.9\textwidth]{figures/faraday_2.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Charge dans une cage de Faraday}
+  Gontran a amené une charge négative de \SI{-10}{\micro\coulomb} dans sa cage de Faraday.
+
+  \only<1>{
+    Comment sont réparties les charges dans la cage? Esquissez les lignes de
+    champ.
+  }
+
+  \only<2>{
+    Tamara est à l'extérieur de la cage, peut-elle savoir que Gontran a une
+    charge négative sans regarder à l'intérieur?
+  }
+
+  \begin{center}
+    \includegraphics<1>[width=0.9\textwidth]{figures/gontran_charge.png}
+
+    \includegraphics<2>[width=0.9\textwidth]{figures/gontran_charge_tamara.png}
+  \end{center}
+\end{frame}
+
+\end{document}
