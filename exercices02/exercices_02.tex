@@ -1,0 +1,173 @@
+\documentclass{tufte-handout}
+
+\usepackage{cmbright}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage[separate-uncertainty]{siunitx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{circuitikz}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\pgfplotsset{compat = 1.3}
+
+% Paul Tol's qualitative palette
+% ``bright''.https://personal.sron.nl/~pault/#sec:qualitative
+\definecolor{tblue}{HTML}{4477AA}
+\definecolor{tcyan}{HTML}{66CCEE}
+\definecolor{tgreen}{HTML}{228833}
+\definecolor{tyellow}{HTML}{CCBB44}
+\definecolor{tred}{HTML}{EE6677}
+\definecolor{tpurple}{HTML}{AA3377}
+\definecolor{tgrey}{HTML}{BBBBBB}
+
+
+% Default arrow for tikz and style for positive and negative objects.
+\tikzset{>=latex,
+    negative/.style={draw=teal!70!black, fill=teal!10, thick},
+    positive/.style={draw=red, fill=red!10, thick}}
+\usetikzlibrary{matrix,calc,decorations.pathreplacing,decorations.pathmorphing,decorations.markings}
+
+% French locale for numbers and negative exponent for units.
+\sisetup{locale=FR, per-mode=symbol}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\rhat}{\vec{\hat{r}}}
+\newcommand{\xhat}{\vec{\imath}}
+\newcommand{\yhat}{\vec{\jmath}}
+\newcommand{\zhat}{\vec{k}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\der}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\pder}[2]{\frac{\partial\ #1}{\partial\ #2}}
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\ddif}{\,\mathrm{d}}
+\newcommand{\grad}{\vec{\nabla}}
+\newcommand{\exemple}[1]{\begin{fullwidth}#1\end{fullwidth}}
+\newcommand{\norm}[1]{\lVert\ #1\ \rVert}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\va}{\vec{a}}
+\newcommand{\vF}{\vec{F}}
+\newcommand{\vE}{\vec{E}}
+\newcommand{\vB}{\vec{B}}
+\newcommand{\vecxyz}[3]{#1 \xhat\ + #2 \yhat\ + #3 \zhat}
+\newcommand{\vecxy}[2]{#1 \xhat\ + #2 \yhat}
+\newcommand{\coulombcst}{k}
+\newcommand{\emf}{\ensuremath{\mathcal{E}}}
+\newcommand{\eval}{\SI{1.602e-19}{C}}
+\newcommand{\kval}{\SI{8.99e9}{Nm^2 \per C^2}}
+
+
+
+
+% Pour cacher les réponses, utiliser la valeur 0
+%\def\reponse{0}
+% Pour afficher les réponses, utiliser la valeur 1
+\def\reponse{0}
+
+
+\title{Champ magnétique}
+\date{}
+\author{203-NYB-05 Électricité et magnétisme}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{Champ d'un fil, le long de l'axe}
+
+On cherche le champ magnétique d'un long fil droit parcouru d'un courant
+constant $i$ sur l'axe du fil, au point $P$. À partir de la loi de Biot-Savart,
+expliquez clairement pourquoi ce champ doit être nul.
+
+\begin{marginfigure}
+  \begin{center}
+  \begin{tikzpicture}
+    \draw[thick] (0, 0) -- (0, 3);
+    \draw[very thick, ->] (0.2, 2.5) -- (0.2, 2.9) node[right] {$i$};
+    \fill (0, -1) circle(2pt);
+    \node at (0.3, -1) {$P$};
+  \end{tikzpicture}
+  \end{center}
+\end{marginfigure}
+
+\if\reponse1
+  {\color{tblue}
+  }
+\else
+  \vspace{5cm}
+\fi
+
+
+\section{Champ d'un arc de cercle}
+
+On considère le fil en forme d'arc de cercle ci-contre qui sous-tend un angle
+de \SI{60}{\degree} et qui a un rayon de \SI{8}{\centi\meter}. Le fil est
+parcouru d'un courant de \SI{12}{\ampere} dans la direction indiquée sur le
+schéma. À partir de la loi de Biot-Savart, déterminez le champ magnétique au
+centre de l'arc de cercle.
+
+\begin{marginfigure}
+  \begin{center}
+  \begin{tikzpicture}
+    \draw[thick] (3, 0) arc (0:60:3);
+    \draw[very thick, <-] (2.8579, 1.65) arc (30:10:3.3) node[right] {$i$};
+    \fill (0, 0) circle(2pt);
+    \node at (-0.2, -0.2) {$P$};
+  \end{tikzpicture}
+  \end{center}
+\end{marginfigure}
+
+\if\reponse1
+  {\color{tblue}
+  }
+\else
+  \vspace{4cm}
+\fi
+
+\clearpage
+
+\section{Champ d'un ensemble de fils}
+
+On considère les trois bouts de fil ci-contre. On a $r = \SI{3}{\centi\meter}$,
+$i_1 = \SI{2}{\ampere}$, $i_2 = \SI{5}{\ampere}$, $i_3 = \SI{1}{\ampere}$. Les
+fils portant les courants $i_2$ et $i_3$ sont de très longs fils
+perpendiculaires au plan de la page. Déterminez le champ magnétique au point
+$P$.
+
+Vous pouvez utiliser les relations obtenues en classe pour le champ d'un long
+fil et le champ d'un fil en forme d'arc de cercle sans les redémontrer
+à partir de la loi de Biot-Savart.
+
+\begin{marginfigure}
+  \begin{center}
+  \begin{tikzpicture}
+    \coordinate (i3) at (-2, 0);
+    \coordinate (i2) at (1, -2);
+    \draw[thick] (0, 4) -- (0, 2) arc (90:0:2) -- (4, 0);
+    \draw[very thick, ->] (1.99, 1.15) arc (30:10:2.3) node[right] {$i_1$};
+    \fill (0, 0) circle(2pt);
+    \node at (-0.2, -0.2) {$P$};
+    \draw[densely dashed, <->] (0, 0) -- node[fill=white] {$r$} ++(90:2);
+    \draw[densely dashed, <->] (0, 0) -- node[fill=white] {$r$} ++(0:2);
+    \draw[densely dashed] (-2, 0) -- node[fill=white] {$r$} (0, 0);
+    \draw[densely dashed] (0, 0) -- node[fill=white] {$r$} (0, -2)
+                          -- node[fill=white] {$\frac{r}{2}$} (i2);
+    \draw[thick] (i2) circle(3pt);
+    \fill (i2) circle(1pt);
+    \node[anchor=north west] at (i2) {$i_2$};
+    \draw[thick, fill=white] (i3) circle(3pt);
+    \node at (i3) {$\times$};
+    \node[anchor=north east] at (i3) {$i_3$};
+  \end{tikzpicture}
+  \end{center}
+\end{marginfigure}
+
+\end{document}

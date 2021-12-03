@@ -1,0 +1,149 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\input{../common}
+\usepackage[version=3]{mhchem}
+
+\setbeamercolor{title}{fg=tblue}
+\setbeamercolor{frametitle}{fg=tblue}
+\setbeamercolor{structure}{fg=tblue}
+
+% Make footnotesize smaller
+\makeatletter
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize\@viipt{11}%
+   \abovedisplayskip 8\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 4\p@ \@plus2\p@ \@minus2\p@
+               \parsep 2\p@ \@plus\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+\makeatother
+
+\title{Électricité et magnétisme}
+\subtitle{Chapitre 10 - Induction électromagnétique}
+\date{30 novembre 2021}
+\author{Loïc Séguin-Charbonneau}
+\institute{Cégep Édouard-Montpetit}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Fluide}
+  Un fluide s'écoule à travers une boucle. Dans laquelle des situations la
+  quantité de fluide qui traverse la boucle est-elle la plus grande?
+
+  \begin{center}
+    \includegraphics[scale=0.8]{figures/flux.pdf}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Flux magnétique}
+  La boucle ci-contre est dans une région où se trouve un champ magnétique
+  uniforme $\vB = \left(\vecxyz{1}{1}{1}\right) \si{G}$. Quel est le flux
+  magnétique à travers la boucle?
+    \begin{center}
+      \includegraphics[width=5cm]{figures/flux-boucle-1.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[t]{Loi de Lenz}
+  Une boucle de fil se trouve dans un champ magnétique uniforme tel qu'illustré
+  sur le dessin ci-dessous.
+
+  \only<1-4>{
+    \begin{center}
+      \includegraphics[width=5cm]{figures/boucle_oeil.png}
+    \end{center}
+  }
+
+  \only<5-6>{
+    \begin{center}
+      \includegraphics[width=5cm]{figures/boucle_oeil_tourne.png}
+    \end{center}
+  }
+
+  \only<1-2>{
+    La grandeur du champ magnétique augmente avec le temps. Quelle est la
+    direction du courant induit dans la boucle?
+
+    \begin{enumerate}[A.]
+      \item<alert@2> sens horaire
+      \item sens anti-horaire
+      \item aucun courant induit
+    \end{enumerate}
+
+  }
+
+  \only<3-4>{
+    La grandeur du champ magnétique diminue avec le temps. Quelle est la
+    direction du courant induit dans la boucle?
+
+    \begin{enumerate}[A.]
+      \item sens horaire
+      \item<alert@4> sens anti-horaire
+      \item aucun courant induit
+    \end{enumerate}
+
+  }
+
+  \only<5-6>{
+    La boucle tourne dans le sens indiqué sur le dessin. Quelle est la direction
+    du courant induit dans la boucle?
+
+    \begin{enumerate}[A.]
+      \item sens horaire
+      \item<alert@6> sens anti-horaire
+      \item aucun courant induit
+    \end{enumerate}
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{Loi de Faraday - Champ magnétique variable}
+  Une bobine circulaire de \SI{5}{\centi\meter} de rayon comportant \num{50}
+  tours se trouve dans un champ magnétique uniforme dont la grandeur varie dans
+  le temps tel qu'illustré dans le graphique ci-dessous.
+  \begin{center}
+    \includegraphics[width=5cm]{figures/champ_variable.png}
+  \end{center}
+
+  Déterminez la f.é.m. induite et la direction du courant à
+  \begin{enumerate}
+    \item $t = \SI{5}{\second}$
+    \item $t = \SI{11}{\second}$
+    \item $t = \SI{20}{\second}$
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Générateur linéaire}
+
+  Un cadre métallique fixe sert de support à une tige métallique mobile. La tige
+  se déplace vers la droite à \SI{20}{cm/s} et sa longueur est de \SI{35}{cm}. Le
+  champ magnétique externe est uniforme de \SI{120}{G}.
+  Si la résistance de la boucle est de \SI{4}{\ohm}, déterminer le courant induit
+  dans la boucle.
+
+  \begin{center}
+  \begin{tikzpicture}[>=latex]
+    \draw[thick] (5, 0) -- (0, 0) -- (0, 3) -- (5, 3);
+    \draw[thick, fill] (2, -0.15) rectangle (2.15, 3.15);
+    \draw[->] (2.25, 1.5) -- ++(1, 0) node[right] {$\vec{v}$};
+    \draw[|<->|] (-0.4, 0) -- node[fill=white] {$L$} (-0.4, 3);
+    \draw (3, 3.5) circle (0.15);
+    \draw (2.894, 3.394) -- (3.1061, 3.6061);
+    \draw (2.894, 3.6061) -- (3.1061, 3.394);
+    \node at (3.3, 3.8) {$\vec{B}$};
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\end{document}

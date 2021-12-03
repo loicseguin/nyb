@@ -1,0 +1,68 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\input{../common}
+\usepackage[version=3]{mhchem}
+
+\setbeamercolor{title}{fg=tblue}
+\setbeamercolor{frametitle}{fg=tblue}
+\setbeamercolor{structure}{fg=tblue}
+
+% Make footnotesize smaller
+\makeatletter
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize\@viipt{11}%
+   \abovedisplayskip 8\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 4\p@ \@plus2\p@ \@minus2\p@
+               \parsep 2\p@ \@plus\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+\makeatother
+
+\title{Électricité et magnétisme}
+\subtitle{Tube à rayons X}
+\date{15 septembre 2021}
+\author{Loïc Séguin-Charbonneau}
+\institute{Cégep Édouard-Montpetit}
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}{Imagerie médicale par rayons X}
+  \begin{columns}[t]
+    \column{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{figures/xray.jpg}  \\
+      {\color{black!60} \footnotesize Nevit Dilmen CC BY-SA 3.0}
+    \end{center}
+
+
+    \column{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{figures/282px-Hand-x-ray.jpg} \\
+      {\color{black!60} \footnotesize NFejza CC BY-SA 3.0}
+    \end{center}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Imagerie médicale par rayons X}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/radio_montage.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Imagerie médicale par rayons X}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/circuit-complet.png}
+  \end{center}
+\end{frame}
+
+
+\end{document}

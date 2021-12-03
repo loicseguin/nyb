@@ -1,0 +1,63 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\input{../common}
+\usepackage[version=3]{mhchem}
+
+\setbeamercolor{title}{fg=tblue}
+\setbeamercolor{frametitle}{fg=tblue}
+\setbeamercolor{structure}{fg=tblue}
+
+% Make footnotesize smaller
+\makeatletter
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize\@viipt{11}%
+   \abovedisplayskip 8\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 4\p@ \@plus2\p@ \@minus2\p@
+               \parsep 2\p@ \@plus\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+\makeatother
+
+\title{Électricité et magnétisme}
+\subtitle{Chapitre 6 - Courant électrique}
+\date{5 octobre 2021}
+\author{Loïc Séguin-Charbonneau}
+\institute{Cégep Édouard-Montpetit}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}{Manic-5}
+  \includegraphics[width=\textwidth]{figures/Manic-5.jpg}
+\end{frame}
+
+
+\begin{frame}{Transport d'électricité}
+Un cable de transport d'électricité à haute tension d'Hydro-Québec fait de
+cuivre et d'un diamètre d'environ \SI{10}{cm} relie la centrale Manic-5 à
+Montréal et a une longueur de \SI{685}{km}. La densité de courant dans le câble
+est de \SI{0.8}{A/mm^2}.
+
+\begin{enumerate}
+  \item Quel est le courant qui circule dans le câble?
+  \item Combien d'électrons traversent une section du câble à chaque minute?
+  \item Déterminez la résistance du câble (la résistivité du cuivre est de
+    \SI{1.678e-8}{\ohm\meter}).
+  \item Quel est le champ électrique dans le câble?
+  \item En combien de temps un électron partant de Manic-5 atteindrait-il
+    Montréal? (La
+    mobilité des électrons dans le cuivre est de \SI{0.0033}{m^2/Vs}.)
+  \item Combien d'énergie est perdue sous forme de chaleur dans le câble à
+    chaque jour?
+  \item Sachant que la centrale produit une puissance de \SI{1596}{MW}, quelle
+    est la proportion de la puissance produite qui est perdue dans le câble?
+\end{enumerate}
+\end{frame}
+
+\end{document}

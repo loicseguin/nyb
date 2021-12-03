@@ -68,10 +68,10 @@
 % Pour cacher les réponses, utiliser la valeur 0
 %\def\reponse{0}
 % Pour afficher les réponses, utiliser la valeur 1
-\def\reponse{1}
+\def\reponse{0}
 
 
-\title{Charges et champs}
+\title{Charges, champ et potentiel}
 \date{}
 \author{203-NYB-05 Électricité et magnétisme}
 
@@ -83,596 +83,268 @@
 
 \section{Fonctionnement d'un tube à rayons X}
 
-Un circuit à haute tension maintient une charge négative sur une plaque à
-proximité du filament et une charge positive sur l'anode. Pour une radiographie
-typique, on utilise un champ électrique de \SI{500}{\kilo\newton\per\coulomb}
-entre la cathode et l'anode. En supposant que la cathode et l'anode sont des
-grandes plaques uniformément chargées, déterminez la densité surfacique de
-charge sur chacune des deux plaques.
+Dans un tube à rayons X, un circuit à haute tension maintient une charge
+négative sur une plaque appelée la cathode et une charge positive sur l'anode.
+Pour y arriver, le circuit haute tension transfère des électrons de l'anode à
+la cathode. Pour une radiographie typique, on utilise un champ électrique de
+\SI{500}{\kilo\newton\per\coulomb} entre la cathode et l'anode. En supposant
+que la cathode et l'anode sont des grandes plaques uniformément chargées,
+illustrez, sur la figure ci-contre, le champ électrique entre les deux plaques.
+Déterminez la densité surfacique de charge sur chacune des deux plaques.
 
-Dans un tube à rayons X, on chauffe un filament en tungstène (semblable à ce
-qu'on peut retrouver dans une ampoule à incandescence) en le soumettant à un
-courant élevé. La chaleur permet à certains électrons d'être arrachés au
-filament lors d'un processus appelé \textbf{thermoionisation}. Le filament se
-trouve dans une section du tube qu'on appelle la cathode. Les électrons
-arrachés sont accélérés (grâce à un champ électrique dont nous parlerons plus
-loin) vers une partie du tube qu'on appelle l'anode. Dans une radiographie
-typique, on transfère une charge de \SI{40.0}{\milli\coulomb} de la cathode à
-l'anode.
-
-Combien d'électrons sont arrachés à la cathode?
-
-\if\reponse1
-  {\color{tblue}
-  }
-\else
-  \vspace{5cm}
-\fi
-
-
-Combien d'électrons en surplus l'anode possède-t-elle après le transfert?
-
-\if\reponse1
-  {\color{tblue}
-  }
-\else
-  \vspace{5cm}
-\fi
-
-En réalité, les électrons excédentaires ne restent pas à l'anode, ils sont
-retournés à la cathode via un circuit à l'extérieur du tube.
-
-
-\subsection{Premier modèle : la tige comme une charge ponctuelle}
-
-Vous vous dites que le modèle le plus simple est de considérer la tige comme
-une charge ponctuelle située en son centre. En utilisant ce modèle, calculez le
-champ électrique au point $P$.
 \begin{marginfigure}
+  \begin{center}
   \begin{tikzpicture}
-    \draw[black!40] (0, -0.1) rectangle (3.5, 0.1);
-    \coordinate (P) at (5, 0);
-    \node[below] (Pn) at (P) {$P$};
-    \fill (P) circle(2pt);
-    \foreach \x in {0.2, 0.7, ..., 3.3} {
-      \node[black!40] at (\x, 0) {$-$};
-    }
-    \fill (1.75, 0) circle (2pt);
-    \node[below] at (1.75, 0) {$Q$};
+    \draw[rounded corners] (0, 0) rectangle (4, 2.5);
+    \draw[ultra thick] (0.5, 0.5) -- (0.5, 2);
+    \draw[ultra thick] (3.5, 0.5) -- (3.5, 2);
+    \draw (0.5, 1.25) -- ++(-1, 0) -- ++(0, 2) -- ++(5, 0)
+      -- ++(0, -2) -- ++(-1, 0);
+    \fill[black!10] (.75, 2.75) rectangle (3.25, 3.75);
+    \node[align=center] at (2, 3.25) {Circuit\\ haute tension};
+    \draw[->] (0.4, 0.6) to[bend right=45] (0, -1) node[below] {Anode};
+    \draw[->] (3.6, 0.6) to[bend left=45] (3, -1) node[below] {Cathode};
   \end{tikzpicture}
+  \end{center}
 \end{marginfigure}
 
 \if\reponse1
   {\color{tblue}
-  La distance entre le centre de la tige et le point $P$ est $L/2 + d$. On
-  considère que toute la charge $Q$ de la tige est en son centre. Par
-  conséquent, le champ électrique est obtenu à partir de l'expression pour le
-  champ d'une charge ponctuelle
-  \begin{align*}
-    E &= \frac{k\abs{Q}}{\left(L/2 + d\right)^2}  \\
-      &= \SI{3715}{\newton\per\coulomb}
-  \end{align*}
-  Le champ pointe vers la tige, donc vers la gauche, parce que la charge de la
-  tige est négative.
+    On sait que chacune des plaques produit un champ uniforme de grandeur
+    $\abs{\sigma} / 2\varepsilon_0$. Les densités surfaciques sont les mêmes en
+    valeur absolues par le principe de conservation de la charge (en supposant
+    que le système est initialement neutre). Entre l'anode et la cathode, les
+    deux champs pointent dans la même direction (vers la cathode), donc les
+    grandeurs s'additionnent par le principe de superposition
+    \begin{align*}
+      E = \frac{\abs{\sigma}}{\varepsilon_0}
+    \end{align*}
+    On connait la grandeur du champ, donc on peut déduire la densité surfacique
+    de charge:
+    \begin{align*}
+      \abs{\sigma} &= \varepsilon_0 E  \\
+                   &= \SI{4.427e-6}{\coulomb\per\meter\squared}
+    \end{align*}
+    La cathode a une charge surfacique de
+    \SI{-4.427}{\micro\coulomb\per\meter\squared} et l'anode a une charge
+    surfacique de \SI{4.427}{\micro\coulomb\per\meter\squared}.
   }
 \else
   \vspace{5cm}
 \fi
 
 
-Est-ce que le résultat que vous obtenez concorde avec le résultat expérimental?
+À proximité de la cathode se trouve un filament de tungstène (semblable à ce
+qu'on peut retrouver dans une ampoule à incandescence). En faisant circuler un
+courant élevé dans ce filament, on le fait chauffer.  La chaleur permet à
+certains électrons d'être arrachés au filament lors d'un processus appelé
+\textbf{thermoionisation}. On appelle les électrons ainsi arrachés des
+\textbf{thermoélectrons}. Les thermoélectrons sont accélérés vers l'anode grâce
+au champ électrique. Dans une radiographie typique, le transfert des
+thermoélectrons de la cathode à l'anode correspond à une charge de
+\SI{-40.0}{\milli\coulomb}. Combien de thermoélectrons sont arrachés à la
+cathode?
 
 \if\reponse1
   {\color{tblue}
-  L'ordre de grandeur est correct, mais avec un écart de plus de
-  \SI{20}{\percent}, ce n'est pas un résultat très exact.
+    On divise simplement la charge totale par la charge d'un électron
+    \begin{align*}
+      n &= \frac{\SI{-40.0}{\milli\coulomb}}{-e}  \\
+        &= \frac{\SI{-40.0}{\milli\coulomb}}{\SI{-1.602e-19}{\coulomb}}  \\
+        &= \num{2.497e17}
+    \end{align*}
   }
 \else
-\vspace{5cm}
+  \vspace{5cm}
 \fi
 
-
-
-\subsection{Deuxième modèle : la tige comme deux charges ponctuelles}
-
-Votre premier modèle ne vous satisfait pas. Vous croyez que vous pouvez faire
-mieux. Vous pensez à diviser la tige en deux \og sous-tiges \fg\ et à
-considérer chacune de ces sous-tiges comme une charge ponctuelle, chacune avec
-la moitié de la charge totale de la tige. Une des charge serait à la moitié de
-la première sous-tige, l'autre charge à la moitié de la deuxième sous-tige.
-\begin{marginfigure}
-  \begin{tikzpicture}
-    \draw[black!40] (0, -0.1) rectangle (1.75, 0.1);
-    \draw[black!40] (1.75, -0.1) rectangle (3.5, 0.1);
-    \coordinate (P) at (5, 0);
-    \node[below] (Pn) at (P) {$P$};
-    \fill (P) circle(2pt);
-    \foreach \x in {0.2, 0.7, ..., 3.3} {
-      \node[black!40] at (\x, 0) {$-$};
-    }
-    \fill (0.875, 0) circle (2pt);
-    \node[below] at (0.875, 0) {$Q/2$};
-    \fill (2.625, 0) circle (2pt);
-    \node[below] at (2.625, 0) {$Q/2$};
-  \end{tikzpicture}
-\end{marginfigure}
-En utilisant ce modèle, calculez le champ électrique au point $P$.
-
+Un thermoélectron, lorsqu'il est arraché au filament, a une vitesse presque
+nulle. Quelle est alors sont énergie cinétique?
 
 \if\reponse1
   {\color{tblue}
-  La charge de gauche est à une distance $3L/4 + d$ du point $P$. En utilisant
-  l'expression du champ pour une charge ponctuelle, on trouve
-  \begin{align*}
-    E_\mathrm{gauche} &= \frac{k\abs{Q/2}}{\left(3L/4 + d\right)^2}  \\
-      &= \SI{1233.2}{\newton\per\coulomb}
-  \end{align*}
-  La charge de droite est à une distance $L/4 + d$ du point $P$. En utilisant
-  l'expression du champ pour une charge ponctuelle, on trouve
-  \begin{align*}
-    E_\mathrm{droite} &= \frac{k\abs{Q/2}}{\left(L/4 + d\right)^2}  \\
-      &= \SI{3110.7}{\newton\per\coulomb}
-  \end{align*}
-  Puisque les deux champs pointent dans la même direction (vers la gauche), on
-  peut appliquer le principe de superposition directement
-  \begin{align*}
-    E &= E_\mathrm{gauche} + E_\mathrm{droite}  \\
-      &= \SI{4344}{\newton\per\coulomb}
-  \end{align*}
+    Puisque l'énergie cinétique est définie par $K = \frac{1}{2} mv^2$
+    et que la vitesse est nulle, on peut déduire que l'énergie cinétique est
+    nulle.
+  }
+\else
+  \vspace{3cm}
+\fi
+
+\marginnote[\baselineskip]{
+  La masse de l'électron est $m_e = \SI{9.109e-31}{\kilo\gram}$.
+}
+À partir du champ que vous avez déterminé plus haut, calculez la force qui agit
+sur un thermoélectron lorsqu'il est entre la cathode et l'anode. Utilisez cette
+force pour déduire l'accélération du thermoélectron.
+
+\if\reponse1
+  {\color{tblue}
+    On pose que l'axe $x$ va vers l'anode. L'électron subit une force donnée par
+    \begin{align*}
+      \vF &= -e \vE  \\
+          &= \SI{-1.602e-19}{\coulomb} \SI{500}{\kilo\newton\per\coulomb} (-\xhat)  \\
+          &= \SI{1.602e-19}{\coulomb} \times \SI{500}{\kilo\newton\per\coulomb} \xhat  \\
+          &= \SI{8.01e-14}{\newton} \xhat
+    \end{align*}
+    Par la deuxième loi de Newton, l'accélération de l'électron est
+    \begin{align*}
+      \va &= \frac{\vF}{m_e}  \\
+          &= \frac{\SI{8.01e-14}{\newton}}{\SI{9.109e-31}{\kilo\gram}} \xhat  \\
+          &= \SI{8.794e16}{\meter\per\second\squared} \xhat
+    \end{align*}
+
   }
 \else
   \vspace{10cm}
 \fi
 
-Est-ce que le résultat que vous obtenez concorde avec le résultat expérimental?
+
+Dans un tube à rayons X, la distance entre la cathode et l'anode est de
+\SI{10.0}{\centi\meter}. Quelle est la vitesse d'un thermoélectron lorsqu'il
+est rendu à l'anode?
 
 \if\reponse1
   {\color{tblue}
-  C'est beaucoup mieux! L'écart est encore important (environ
-  \SI{7}{\percent}), mais on sent qu'on progresse dans la bonne direction.
+    Si le champ électrique entre la cathode et l'anode est uniforme, alors
+    l'accélération de l'électron est uniforme et sont mouvement est un
+    mouvement rectiligne uniforme. On pose que l'origine de l'axe $x$ est à la
+    cathode.
+    \begin{align*}
+      x &= x_0 + v_{0x} + \frac{1}{2} a_x t^2  \\
+      x &= \frac{1}{2} a_x t^2    \\
+      t &= \sqrt{\frac{2x}{a_x}}
+    \end{align*}
+    Puisque la vitesse est la dérivée de la position
+    \begin{align*}
+      v_x &= v_{0x} + a_x t  \\
+          &= a_x \sqrt{\frac{2x}{a_x}}  \\
+          &= \sqrt{2a_xx}  \\
+          &= \sqrt{2 \cdot \SI{8.794e16}{\meter\per\second\squared} \cdot
+                     \SI{10}{\centi\meter}}  \\
+          &= \SI{1.326e8}{\meter\per\second}  \\
+      \vv &= \SI{1.326e8}{\meter\per\second} \xhat
+    \end{align*}
+    C'est un peu moins de la moitié de la vitesse de la lumière!
   }
 \else
-\vspace{5cm}
+  \vspace{10cm}
 \fi
 
 
-
-
-\subsection{Troisième modèle : la tige comme $n$ charges ponctuelles}
-
-Bien heureux de votre succès avec le deuxième modèle, vous décidez de
-poursuivre dans cette voie. Vous décidez de \og briser \fg\ la tige en $n$
-\og sous-tiges \fg\ chacune de largeur $L/n$ et portant chacune une charge
-$Q/n$.
-\begin{marginfigure}
-  \begin{tikzpicture}
-    \foreach \i [evaluate=\i as \x using (0.7 * \i)] in {0, 1, ..., 4} {
-      \draw[black!40] (\x, -0.1) rectangle (\x + 0.7, 0.1);
-    }
-    \coordinate (P) at (5, 0);
-    \node[below] (Pn) at (P) {$P$};
-    \fill (P) circle(2pt);
-    %\foreach \i [evaluate=\i as \x using (2 * \i - 1) * 3.5 / (2 * 5)]
-      %in {1, 2, ..., 5} {
-      %\fill (\x, 0) circle (2pt);
-      %\draw (\x, -0.5) -- (\x, -0.7) node[below] {$x_\i$};
-    %}
-    \fill (0.35, 0) circle (2pt);
-    \draw (0.35, -0.5) -- (0.35, -0.7) node[below] {$x_1$};
-    \fill (1.05, 0) circle (2pt);
-    \draw (1.05, -0.5) -- (1.05, -0.7) node[below] {$x_2$};
-    \node at (1.75, 0) {$\ldots$};
-    \draw (1.75, -0.5) -- (1.75, -0.7) node[below] {$\ldots$};
-    \fill (2.45, 0) circle (2pt);
-    \draw (2.45, -0.5) -- (2.45, -0.7) node[below] {$x_{n - 1}$};
-    \fill (3.15, 0) circle (2pt);
-    \draw (3.15, -0.5) -- (3.15, -0.7) node[below] {$x_n$};
-    \draw[->] (-0.2, -0.5) -- (5.5, -0.5) node[below] {$x$};
-    \draw (0, -0.5) -- (0, -0.7) node[below] {$0$};
-    \draw (5, -0.5) -- (5, -0.7) node[below] {$x_p$};
-  \end{tikzpicture}
-\end{marginfigure}
-Pour vous aider dans vos calculs, vous définissez un système d'axe avec l'axe
-des $x$ qui pointe vers la droite. Vous placez l'origine à l'extrémité gauche
-de la tige. Pourquoi n'avez-vous pas vraiment besoin d'un axe $y$ ou $z$ dans
-cette situation?
-
-\if\reponse1
-  {\color{tblue}
-    Le champ généré par la tige au point $P$ pointe vers la gauche parce que le
-    point $P$ est aligné avec l'axe de la tige et que la tige est négative. Il
-    n'y a aucune composante du champ électrique dans une direction autre que
-    celle de l'axe $x$.
-  }
-\else
-  \vspace{1cm}
-\fi
-
-
-Quelle est la position du point $P$, $x_p$?
-
-\if\reponse1
-  {\color{tblue}
-    Le point $P$ est à une distance $d$ à droite de la fin de la tige de
-    longueur $L$. Puisque l'origine est à gauche de la tige, $x_p = L + d =
-    \SI{16}{\centi\meter}$.
-  }
-\else
-  \vspace{1cm}
-\fi
-
-Vous décidez d'appeler $x_1, x_2, \ldots, x_n$ les positions des différents
-morceaux de charge $Q/n$. Écrivez une expression qui vous permet de calculer la
-position du morceau de charge $i$, $x_i$.
+Quelle est l'énergie cinétique du thermoélectron lorsqu'il est rendu à l'anode?
 
 \if\reponse1
   {\color{tblue}
     \begin{align*}
-      x_{i} = (i - 1) \frac{L}{n} + \frac{1}{2}\frac{L}{n}
+      K &= \frac{1}{2} m_e v^2  \\
+        &= \SI{8.0103e-15}{\joule}
     \end{align*}
   }
 \else
-  \vspace{1cm}
+  \vspace{5cm}
 \fi
 
+Lorsque l'électron entre en collision avec l'anode, cette énergie cinétique
+peut être convertie, en tout ou en partie, en un rayon X.
 
-Écrivez l'expression qui permet de calculer la composante $x$ du champ
-électrique produit par le morceau de charge $i$.
+La force électrique est une force conservative, c'est-à-dire qu'on peut lui
+associer une énergie potentielle. On peut fixer la valeur d'énergie potentielle
+à l'anode à zero. En utilisant le principe de conservation de l'énergie,
+déduisez l'énergie potentielle électrique d'un thermoélectron lorsqu'il est à
+la cathode.
 
 \if\reponse1
   {\color{tblue}
     \begin{align*}
-      E_{ix} = \frac{k Q/n}{(L + d - x_i)^2}
+      U_\mathrm{cathode} &= K_\mathrm{anode}  \\
+        &= \SI{8.0103e-15}{\joule}
     \end{align*}
   }
 \else
-  \vspace{1cm}
+  \vspace{5cm}
 \fi
 
-Appliquez le principe de superposition pour obtenir une expression pour la
-composante $x$ du champ électrique total.
+
+
+Le potentiel électrique est défini comme l'énergie potentielle par unité de
+charge. Quel et le potentiel électrique à la cathode?
 
 \if\reponse1
   {\color{tblue}
     \begin{align*}
-      E_{x} = \sum_i \frac{k Q/n}{(L + d - x_i)^2}
+      V_\mathrm{cathode} &= \frac{U}{-e}  \\
+        &= \SI{-50.0}{\kilo\volt}
     \end{align*}
   }
 \else
-  \vspace{1cm}
+  \vspace{5cm}
 \fi
 
 
-En combinant cette expression avec celle qui donne les valeurs de $x_i$, vous
-pouvez calculer le champ électrique pour n'importe quel nombre de morceaux.
-C'est un peu laborieux, mais un ordinateur est l'outil parfait pour faire ce
-genre de calculs répétitifs. Le tableau ci-contre montre les valeurs de champ
-obtenu pour différentes valeurs de $n$ jusqu'à $20$.
+\section{Bonus}
 
 \marginnote{
-  \begin{center}
-    \begin{tabular}{SS}
-      \toprule
-      $n$    &  {$E_x$ (\si{\newton\per\coulomb})}  \\
-      \midrule
-       1    &   -3714.9  \\
-       2    &   -4343.9  \\
-       3    &   -4516.8  \\
-       4    &   -4585.4  \\
-       5    &   -4619.1  \\
-       6    &   -4637.9  \\
-       7    &   -4649.4  \\
-       8    &   -4657.0  \\
-       9    &   -4662.3  \\
-      10    &   -4666.0  \\
-      11    &   -4668.8  \\
-      12    &   -4671.0  \\
-      13    &   -4672.6  \\
-      14    &   -4674.0  \\
-      15    &   -4675.0  \\
-      16    &   -4675.9  \\
-      17    &   -4676.6  \\
-      18    &   -4677.2  \\
-      19    &   -4677.8  \\
-      20    &   -4678.2  \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
+  \[h = \SI{6.626e-34}{\joule\second} \]
 }
-
-En regardant les valeurs dans ce tableau, que remarquez-vous qu'il se passe à
-mesure que les valeurs de $n$ augmente? Voyez-vous une tendance intéressante?
-
-\if\reponse1
-  {\color{tblue}
-    La composante $x$ du champ électrique semble se stabiliser à une valeur
-    proche de \SI{-4680}{\newton\per\coulomb}. Les mathématiciens diraient que
-    la suite semble \textbf{converger} vers cette valeur. Probablement que si
-    on continuait les calculs avec des valeurs de plus en plus grandes de $n$,
-    on arriverait à une valeur bien spécifique.
-  }
-\else
-  \vspace{1cm}
-\fi
-
-Est-ce que le champ électrique obtenu avec $20$ morceaux concorde avec celui
-obtenu expérimentalement?
-
-\if\reponse1
-  {\color{tblue}
-    Oui! Compte tenu de l'incertitude sur la valeur expérimentale, les deux
-    valeurs sont égales.
-  }
-\else
-  \vspace{1cm}
-\fi
-
-
-\subsection{Quatrième modèle : la tige comme une infinité de charges
-  ponctuelles}
-
-Vous remarquez que plus $n$ devient grand, plus les \og sous-tiges \fg\ sont
-petites et plus leur charge est petite. Vous vous retrouvez donc à additionner
-un très grand nombre de contributions qui sont chacune très petites. Un ami
-vous suggère d'utiliser la notation $dQ$ pour représenter la valeur de charge
-(le $Q / n$) lorsque le nombre de morceaux tend vers l'infini. Il vous suggère
-aussi de remplacer le symbole usuel de sommation $\sum$ par un S stylisé
-$\int$. Vous voyez, votre ami est un mathématicien, et ces gens sont réputés
-pour leur appréciation des notations compliquées. En utilisant cette nouvelle
-notation, récrivez l'expression pour la composante $x$ du champ électrique au
-point $P$ en supposant que le nombre de morceaux tend vers l'infini.
+Lorsqu'un électron entre en collision avec l'anode, il peut perdre toute son
+énergie cinétique et cette énergie est convertie en un rayon X. Vous verrez,
+dans votre troisième cours de physique, que l'énergie d'une \og particule \fg\
+de lumière (un \textbf{photon}), est donnée par
+\[E_\mathrm{photon} = hf\]
+où $h$ est la constante de Planck et $f$ est la fréquence du photon. Si toute
+l'énergie cinétique d'un thermoélectron est convertie en énergie d'un photon,
+quelle est la fréquence de ce photon? Est-ce que ça correspond bien à la
+fréquence d'un rayon X?
 
 \if\reponse1
   {\color{tblue}
     \begin{align*}
-      E_{x} = \int \frac{k dQ}{(L + d - x)^2}
     \end{align*}
-
-    Dans cette expression, le $x$ est la position d'un des petits morceaux.
   }
 \else
-  \vspace{1cm}
+  \vspace{3cm}
 \fi
 
-Dans cette expression, qu'on appelle une intégrale indéfinie, on ne spécifie
-pas quel est le domaine d'intégration, c'est-à-dire la région de l'espace sur
-laquelle on fait la somme. Évidemment, vous êtes en train d'additionner les
-contributions des différents morceaux de la tige, vous devez donc faire
-l'intégrale sur toute la tige.
+En supposant qu'environ \SI{0.1}{\percent} de l'énergie cinétique de tous les
+thermoélectrons est transférée à l'anode pour produire des rayons X. Quelle est
+l'énergie totale dans le faisceau de rayons X?
 
 \if\reponse1
   {\color{tblue}
     \begin{align*}
-      E_{x} = \int_\mathrm{tige} \frac{k dQ}{(L + d - x)^2}
     \end{align*}
   }
 \else
-  \vspace{1cm}
+  \vspace{3cm}
 \fi
 
-On appelle une des petites sous-tiges un \textbf{élément} de tige. La
-longueur d'une des sous-tige est $dx$ et la tige est uniformément chargée,
-de telle sorte que la charge par unité de longueur est $\lambda$. Vous pouvez
-récrire l'élément de charge $dQ$ en fonction de l'élément de longueur $dx$ et
-de la densité linéique de charge $\lambda$.
+\marginnote[2\baselineskip]{
+  L'unité de dose équivalente est le sievert : $\SI{1}{\sievert} =
+  \SI{1}{\joule\per\kilogram}$.
+}
+On peut calculer la \textbf{dose de radiation équivalente} absorbée par le
+patient. La dose équivalente pour les rayons X est définie par l'énergie de
+radiation absorbée par unité de masse de la personne qui reçoit la radiation
+\[ H = \frac{E}{m} \]
+où $E$ représente l'énergie de la radiation reçue. Quelle serait votre dose
+équivalente si \SI{1}{\percent} de l'énergie des rayons X était absorbée dans
+votre corps lors de la radiographie?
 
 \if\reponse1
   {\color{tblue}
     \begin{align*}
-      dQ = \lambda dx
     \end{align*}
   }
 \else
-  \vspace{1cm}
+  \vspace{3cm}
 \fi
 
-En remplaçant dans l'expression du champ électrique et en prenant soin de bien
-indiquer les bornes d'intégration pour que la variable $x$ couvre toute la
-tige, vous obtenez une intégrale définie que vous êtes capables d'évaluer grâce
-à vos connaissances en calcul intégral. Faites le calcul et vérifiez si la
-valeur numérique obtenue concorde avec la valeur expérimentale.
+Sachant que la dose quotidienne de radiation que vous recevez normalement en
+provenance de l'environnement est d'environ \SI{10}{\micro\sievert},
+devriez-vous être inquiet des effets néfastes sur votre santé d'une
+radiographie?
 
-\if\reponse1
-  {\color{tblue}
-    \begin{align*}
-      E_{x} &= \int_\mathrm{tige} \frac{k \lambda dx}{(L + d - x)^2} \\
-            &= \int_0^L \frac{k \lambda dx}{(L + d - x)^2} \\
-            &= k \lambda \int_0^L \frac{dx}{(L + d - x)^2} \\
-            &= k \lambda \int_{L + d}^d \frac{-du}{u^2} &
-              \text{où } u = L + d - x \text{ donc } du = -dx  \\
-            &= k \lambda \left[ \frac{1}{u} \right]_{L + d}^d  \\
-            &= k \lambda \left( \frac{1}{d} - \frac{1}{L + d} \right)
-    \end{align*}
-    La densité de charge est $\lambda = Q/L = \SI{-5}{\nano\coulomb} /
-    \SI{10}{\centi\meter} = \SI{-5e-8}{\coulomb\per\meter}$. On trouve donc
-    \begin{align*}
-      E_x  &= \SI{8.99e9}{\newton\meter\squared\per\coulomb\squared}
-              \left( \SI{-5e8}{\coulomb} \right) \left(
-                \frac{1}{\SI{6}{\centi\meter}} - \frac{1}{\SI{10}{\centi\meter}
-                  + \SI{6}{\centi\meter}} \right)  \\
-           &= \SI{-4682.3}{\newton\per\meter}
-    \end{align*}
-    Donc $\vE = \SI{-4682.3}{\newton\per\meter}\xhat$.
-  }
-\else
-  \vspace{10cm}
-\fi
-
-Si on est très loin du fil, alors le fil ressemble de plus en plus à un point.
-Vous vous attendez donc à ce que le champ du fil se rapproche de celui d'un
-point. Montrez que c'est le cas en utilisant l'expression symbolique que vous
-avez obtenue pour la composante $x$ du champ.
-
-\if\reponse1
-  {\color{tblue}
-    \begin{align*}
-      E_{x} &= k \lambda \left( \frac{1}{d} - \frac{1}{L + d} \right)  \\
-            &= k \lambda  \frac{L}{d(L + d)}
-    \end{align*}
-    Si on est très loin de la tige, alors $d \gg L$ et $L + d \approx d$ d'où
-    \begin{align*}
-      E_{x} &= k \lambda \left( \frac{1}{d} - \frac{1}{L + d} \right)  \\
-            &= k \lambda  \frac{L}{d^2}  \\
-            &= \frac{kQ}{d^2}
-    \end{align*}
-
-  }
-\else
-  \vspace{1cm}
-\fi
-
-
-
-
-
-
-
-%\section{Champ électrique au-dessus d'une tige uniformément chargée}
-
-
-%Considérez une tige de longueur $L$, portant une densité linéique de charge
-%uniforme $\lambda$. On cherche le champ électrique à une distance $D$ au-dessus
-%du centre de la tige.
-
-%\begin{figure}
-  %\begin{tikzpicture}
-    %\draw (-3, 0) -- (3, 0);
-    %\draw (-3, -0.1) -- (3, -0.1);
-    %\coordinate (P) at (0, 3);
-    %\coordinate (O) at (0, 0);
-    %\coordinate (r) at (2, 0);
-    %\node[anchor=west] (Pn) at (P) {$P$};
-    %\fill (P) circle(2pt);
-    %\draw[<->] (O) -- node[fill=white] {$D$} ($(P) - (0, 0.08)$);
-    %\fill ($(r) + (0.1, 0)$) rectangle ++(-0.2, -0.1);
-    %\draw[dashed] (r) -- node[right] {$r$} (P);
-    %\draw ($(P) - (0, 0.5)$) arc (-90:{-atan(3/2}:0.5);
-    %\node at ($(P) + (0.2, -0.7)$) {$\theta$};
-    %\draw (0, -0.1) -- (0, -0.3) node[below] {$0$};
-    %\draw (r) -- ++(0, -0.3) node[below] {$x$};
-    %\draw[->] (-2.8, 1.5) -- (-2, 1.5) node[below] {$x$};
-    %\draw[->] (-2.8, 1.5) -- (-2.8, 2.5) node[left] {$y$};
-  %\end{tikzpicture}
-%\end{figure}
-
-
-%\begin{enumerate}
-  %\item Faites un schéma de la situation en vous inspirant du schéma ci-contre.
-    %Identifiez un élément de charge $dq$ le long de la tige. Tracez le champ
-    %électrique $d\vec{E}$ produit par cet élément de charge.
-  %\item Trouvez une expression pour la charge en fonction de la densité
-    %linéique de charge et de la longueur de l'élément de charge.
-  %\item En utilisant la symétrie de la situation, déduisez la valeur de la
-    %composante horizontale du champ électrique net.
-  %\item L'élément de charge est suffisamment petit pour se comporter comme une
-    %charge ponctuelle. Montrez que l'expression de la composante $y$ du champ
-    %électrique au point $P$ est
-    %\[
-      %dE_y = \frac{k \lambda dx}{r^2} \cos \theta.
-    %\]
-  %\item L'expression précédente contient trois variables $x$, $r$ et $\theta$.
-    %Pour être en mesure de calculer l'intégrale, vous devez exprimer le champ
-    %électrique en terme d'une seule variable. Ici, vous utiliserez $\theta$.
-    %Exprimez $r$ en fonction de $D$ et $\theta$. Exprimez $x$ en fonction de
-    %$\theta$ puis dérivez pour trouver $dx$ en fonction de $d\theta$
-    %\marginpar{Rappelez-vous que la dérivée de $\tan \theta$ est $\sec^2 \theta$}.
-    %Vous devriez obtenir
-    %\[
-      %dE_y = \frac{k \lambda d\theta}{D} \cos \theta.
-    %\]
-  %\item Appliquez le principe de superposition pour obtenir une intégrale
-    %donnant la composante $y$ du champ électrique net. Les bornes d'intégration
-    %devraient être choisies de telle sorte que vous couvrez la tige au complet.
-
-  %\begin{figure}
-    %Indice pour les bornes d'intégration:
-
-    %\begin{tikzpicture}
-      %\draw (-3, 0) -- (3, 0);
-      %\draw (-3, -0.1) -- (3, -0.1);
-      %\coordinate (P) at (0, 3);
-      %\coordinate (O) at (0, 0);
-      %\coordinate (r) at (3, 0);
-      %\node[anchor=west] (Pn) at (P) {$P$};
-      %\fill (P) circle(2pt);
-      %\draw[<->] (O) -- node[fill=white] {$D$} ($(P) - (0, 0.08)$);
-      %\fill ($(r) + (0.1, 0)$) rectangle ++(-0.2, -0.1);
-      %\draw[dashed] (r) -- node[right] {$\sqrt{L^2/4 + D^2}$} (P);
-      %\draw ($(P) - (0, 0.5)$) arc (-90:{-atan(3/3}:0.5);
-      %\node at ($(P) + (0.2, -0.7)$) {$\theta$};
-      %\draw (0, -0.1) -- (0, -0.3) node[below] {$0$};
-      %\draw (r) -- ++(0, -0.3) node[below] {$L/2$};
-    %\end{tikzpicture}
-  %\end{figure}
-
-  %\item Évaluez l'intégrale. Vous devriez trouver
-    %\[
-      %\vec{E} = \frac{k \lambda}{D} \frac{L}{\sqrt{L^2 / 4 + D^2}} \yhat.
-    %\]
-
-  %\item Montrez que lorsque la distance $D$ est beaucoup plus grande que la
-    %longueur de la tige, le champ électrique produit par la tige se rapproche
-    %de celui d'une charge ponctuelle :
-    %\[
-      %\vec{E} = \frac{k\lambda L}{D^2} \yhat.
-    %\]
-
-  %\item Montrez que lorsque la tige est très longue ($L$ est beaucoup plus
-    %grand que la distance $D$), le champ électrique produit par la tige est
-    %donné par
-    %\[
-      %\vec{E} = \frac{2k\lambda }{D} \yhat.
-    %\]
-
-%\end{enumerate}
-
-
-%\section{Champ électrique d'un arc uniformément chargé}
-
-%On considère un arc de cercle de rayon $R$ qui couvre un angle $\alpha$ et
-%porte une densité linéique de charge $\lambda$.  Quel est le champ électrique
-%au centre du cercle?
-
-%\begin{figure}
-  %\begin{tikzpicture}
-    %\draw[decorate, decoration={
-      %markings, mark=between positions 0.1 and 1 step 6mm with {
-        %\node (0, 0) {$+$};
-    %}}] (-40:2.5) arc (-40:40:2.5);
-    %\draw (-40:2.7) arc (-40:40:2.7);
-    %\draw (-40:2.3) arc (-40:40:2.3);
-    %\draw[fill=black] (0, 0) circle (1pt);
-    %\draw (0, 0) -- node[fill=white] {$R$} ++(40:2.3);
-    %\draw (0, 0) -- ++(-40:2.3);
-    %\draw (-40:0.3) arc (-40:40:0.3);
-    %\draw[dashed, <-] (-1, 0) node[below] {$x$} -- (3, 0);
-    %\draw[fill=black!20] (-30:2.3) -- (-30:2.7) arc (-30:-25:2.7) -- (-25:2.3) -- cycle;
-    %\draw[dashed] (-27.5:2.3) -- (0, 0);
-    %\draw (0:1) arc (0:-27.5:1);
-    %\draw[->|] (-34:2.8) -- (-30:2.8);
-    %\draw[->|] (-21:2.8) -- (-25:2.8);
-    %\node at (-27:3.2) {$Rd\theta$};
-    %\node at (-14:1.3) {$\theta$};
-    %\node[fill=white] at (0:0.6) {$\alpha$};
-  %\end{tikzpicture}
-%\end{figure}
-
-%\begin{enumerate}
-  %\item En utilisant un argument de symétrie, montrez que le champ électrique
-    %net n'a qu'une composante parallèle à l'axe des $x$.
-  %\item Montrez que la composante $x$ du champ électrique produit par un
-    %élément de charge $dq$ est donné par
-    %\[
-      %\dif E_x =  \frac{k\lambda R \ddif \theta}{R^2} \cos \theta.
-    %\]
-  %\item Appliquez le principe de superposition pour trouver le champ électrique
-    %résultant
-    %\[
-      %\vec{E} = \frac{2k\lambda}{R} \sin(\alpha / 2) \xhat.
-    %\]
-  %\item À partir du résultat précédent, montrez que le champ électrique au
-    %centre d'un anneau uniformément chargé est nul.
-%\end{enumerate}
 
 
 \end{document}
