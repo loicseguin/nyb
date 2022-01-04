@@ -107,7 +107,7 @@
 \end{frame}
 
 
-\begin{frame}{Loi de Faraday - Champ magnétique variable}
+\begin{frame}[t]{Loi de Faraday - Champ magnétique variable}
   Une bobine circulaire de \SI{5}{\centi\meter} de rayon comportant \num{50}
   tours se trouve dans un champ magnétique uniforme dont la grandeur varie dans
   le temps tel qu'illustré dans le graphique ci-dessous.
@@ -118,13 +118,25 @@
   Déterminez la f.é.m. induite et la direction du courant à
   \begin{enumerate}
     \item $t = \SI{5}{\second}$
+              \only<2>{
+                \alert{
+                  \,\,\SI{0.2356e-4}{\volt},
+                  courant dans le sens anti-horaire
+                }
+              }
     \item $t = \SI{11}{\second}$
+               \only<2>{\alert{\,\,\SI{0}{\volt}}}
     \item $t = \SI{20}{\second}$
+               \only<2>{
+                 \alert{
+                   \,\,\SI{0.0785e-4}{\volt}, courant dans le sens horaire
+                 }
+               }
   \end{enumerate}
 \end{frame}
 
 
-\begin{frame}{Générateur linéaire}
+\begin{frame}[t]{Générateur linéaire}
 
   Un cadre métallique fixe sert de support à une tige métallique mobile. La tige
   se déplace vers la droite à \SI{20}{cm/s} et sa longueur est de \SI{35}{cm}. Le
@@ -144,6 +156,7 @@
     \node at (3.3, 3.8) {$\vec{B}$};
   \end{tikzpicture}
   \end{center}
+  \only<2>{\alert{\SI{0.210}{\milli\ampere}, courant anti-horaire}}
 \end{frame}
 
 \end{document}
